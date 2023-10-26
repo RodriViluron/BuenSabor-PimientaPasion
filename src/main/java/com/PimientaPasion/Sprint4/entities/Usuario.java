@@ -12,6 +12,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 @Setter
 @Table(name = "usuario")
 @Builder
+@Data
 
 public class Usuario extends Base {
 

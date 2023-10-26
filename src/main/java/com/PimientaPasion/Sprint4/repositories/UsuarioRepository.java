@@ -12,6 +12,7 @@ import java.util.List;
 
 @Repository
 public interface UsuarioRepository extends BaseRepository<Usuario, Long> {
+
     @Query(value = "SELECT u FROM Usuario u WHERE u.username LIKE %:filtro%")
     List<Usuario> search(@Param("filtro") String filtro);
 

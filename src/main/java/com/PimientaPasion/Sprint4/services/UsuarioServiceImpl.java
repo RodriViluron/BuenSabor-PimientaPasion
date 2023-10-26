@@ -1,5 +1,6 @@
 package com.PimientaPasion.Sprint4.services;
 
+import com.PimientaPasion.Sprint4.entities.Cliente;
 import com.PimientaPasion.Sprint4.entities.Ingrediente;
 import com.PimientaPasion.Sprint4.entities.Usuario;
 import com.PimientaPasion.Sprint4.repositories.BaseRepository;
@@ -12,9 +13,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UsuarioServiceImpl extends BaseServiceImpl<Usuario, Long> implements UsuarioService {
+public class UsuarioServiceImpl extends BaseServiceImpl<Usuario, Long> implements UsuarioService{
+
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    UsuarioRepository usuarioRepository;
 
     public UsuarioServiceImpl(BaseRepository<Usuario, Long> baseRepository, UsuarioRepository usuarioRepository) {
         super(baseRepository);
@@ -39,5 +41,4 @@ public class UsuarioServiceImpl extends BaseServiceImpl<Usuario, Long> implement
             throw new Exception(e.getMessage());
         }
     }
-
 }
