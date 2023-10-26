@@ -1,5 +1,6 @@
 package com.PimientaPasion.Sprint4.services;
 
+import com.PimientaPasion.Sprint4.entities.Ingrediente;
 import com.PimientaPasion.Sprint4.entities.Usuario;
 import com.PimientaPasion.Sprint4.repositories.BaseRepository;
 import com.PimientaPasion.Sprint4.repositories.UsuarioRepository;
@@ -19,45 +20,24 @@ public class UsuarioServiceImpl extends BaseServiceImpl<Usuario, Long> implement
         super(baseRepository);
         this.usuarioRepository = usuarioRepository;
     }
+
     @Override
-    public List<Usuario> searchNativo(String filtro) throws Exception {
+    public List<Usuario> search(String filtro) throws Exception {
         try{
-
-            List<Usuario> usuario = usuarioRepository.searchNativo(filtro);
-            return usuario;
-
-        } catch (Exception e){
+            List<Usuario> usuarios = usuarioRepository.searchNativo(filtro);
+            return usuarios;
+        } catch(Exception e){
             throw new Exception(e.getMessage());
         }
     }
     @Override
-    public List<Usuario> findAll() throws Exception {
-        return null;
-    }
-
-    @Override
-    public Page<Usuario> findAll(Pageable pageable) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Usuario findById(Long aLong) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Usuario save(Usuario entity) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Usuario update(Long aLong, Usuario entity) throws Exception {
-        return null;
-    }
-
-    @Override
-    public boolean delete(Long aLong) throws Exception {
-        return false;
+    public Page<Usuario> search(String filtro, Pageable pageable) throws Exception {
+        try{
+            Page<Usuario> usuarios= usuarioRepository.searchNativo(filtro, pageable);
+            return usuarios;
+        } catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 
 }

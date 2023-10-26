@@ -1,6 +1,7 @@
 package com.PimientaPasion.Sprint4.services;
 
 import com.PimientaPasion.Sprint4.entities.Cliente;
+import com.PimientaPasion.Sprint4.entities.Ingrediente;
 import com.PimientaPasion.Sprint4.repositories.BaseRepository;
 import com.PimientaPasion.Sprint4.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,42 +23,22 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente, Long> implement
     }
 
     @Override
-    public List<Cliente> findAll() throws Exception {
-        return null;
-    }
-
-    @Override
-    public Page<Cliente> findAll(Pageable pageable) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Cliente findById(Long aLong) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Cliente save(Cliente entity) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Cliente update(Long aLong, Cliente entity) throws Exception {
-        return null;
-    }
-
-    @Override
-    public boolean delete(Long aLong) throws Exception {
-        return false;
-    }
-
-    @Override
     public List<Cliente> search(String filtro) throws Exception {
-        return null;
+        try{
+            List<Cliente> clientes = clienteRepository.search(filtro);
+            return clientes;
+        } catch(Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
-
     @Override
     public Page<Cliente> search(String filtro, Pageable pageable) throws Exception {
-        return null;
+        try{
+            Page<Cliente> clientes= clienteRepository.searchNativo(filtro, pageable);
+            return clientes;
+        } catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
+
 }
