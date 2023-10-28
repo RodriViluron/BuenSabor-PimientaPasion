@@ -24,6 +24,9 @@ public class Usuario extends Base {
     @Column(name = "username", nullable = false)
     private String username;
 
+    @NonNull
+    private String contraseña;
+
     private boolean eliminado;
 
     @NotNull

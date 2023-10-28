@@ -76,6 +76,7 @@ public class Sprint4Application {
             Usuario usuario1 = Usuario.builder()
                     .auth0Id("1")
                     .username("rodri@gmail.com")
+                    .contraseña("rodri")
                     .rol(Rol.CLIENTE)
                     .build();
 
@@ -83,36 +84,42 @@ public class Sprint4Application {
             Usuario usuario2 = Usuario.builder()
                     .auth0Id("2")
                     .username("roberto@gmail.com")
+                    .contraseña("roberto")
                     .rol(Rol.CLIENTE)
                     .build();
 
             Usuario usuario3 = Usuario.builder()
                     .auth0Id("3")
-                    .username("jose@gmail.com")
+                    .username("joaquine@gmail.com")
+                    .contraseña("joaquin")
                     .rol(Rol.ADMINISTRADOR)
                     .build();
 
             Usuario usuario4 = Usuario.builder()
                     .auth0Id("4")
-                    .username("fernando@gmail.com")
+                    .username("tomas@gmail.com")
+                    .contraseña("tomas")
                     .rol(Rol.CAJERO)
                     .build();
 
             Usuario usuario5 = Usuario.builder()
                     .auth0Id("5")
-                    .username("joaquin@gmail.com")
+                    .username("german@gmail.com")
+                    .contraseña("german")
                     .rol(Rol.COCINERO)
                     .build();
 
             Usuario usuario6 = Usuario.builder()
                     .auth0Id("6")
-                    .username("ezequiel@gmail.com")
+                    .username("lautaro@gmail.com")
+                    .contraseña("lautaro")
                     .rol(Rol.DELIVERY)
                     .build();
 
             Usuario usuario7 = Usuario.builder()
                     .auth0Id("7")
-                    .username("tomas@gmail.com")
+                    .username("leandro@gmail.com")
+                    .contraseña("leandro")
                     .rol(Rol.COCINERO)
                     .build();
 
@@ -244,6 +251,10 @@ public class Sprint4Application {
                     .denominacion("Fiambres")
                     .build();
 
+            RubroIngrediente rubro5=RubroIngrediente.builder()
+                    .denominacion("Bebidas")
+                    .build();
+
             // Crear Ingredientes
             Ingrediente ingrediente1 = Ingrediente.builder()
                     .denominacion("tomate")
@@ -317,13 +328,35 @@ public class Sprint4Application {
                     .urlImagen("urlImagenPanLomoClasico")
                     .build();
 
+            Ingrediente ingrediente10 = Ingrediente.builder()
+                    .denominacion("CocaCola 1.5L")
+                    .stockActual(50.20)
+                    .stockMinimo(15.0)
+                    .precioCompra(100)
+                    .urlImagen("urlImagenCocaCola1.5L")
+                    .build();
+
+            Ingrediente ingrediente11 = Ingrediente.builder()
+                    .denominacion("Agua Mineral 0.6L")
+                    .stockActual(50.20)
+                    .stockMinimo(15.0)
+                    .precioCompra(100)
+                    .urlImagen("urlImagenAguaMineral0.6L")
+                    .build();
+
             // Crear UnidadMedida
             UnidadMedida unidadMedida1 = UnidadMedida.builder()
                     .denominacion("gramos")
                     .abreviatura("gr")
                     .build();
 
+            UnidadMedida unidadMedida2 = UnidadMedida.builder()
+                    .denominacion("litros")
+                    .abreviatura("l")
+                    .build();
+
             unidadMedidaRepository.save(unidadMedida1);
+            unidadMedidaRepository.save(unidadMedida2);
 
             // Asignar UnidadMedida a Ingrediente
             ingrediente1.setUnidadMedida(unidadMedida1);
@@ -335,6 +368,8 @@ public class Sprint4Application {
             ingrediente7.setUnidadMedida(unidadMedida1);
             ingrediente8.setUnidadMedida(unidadMedida1);
             ingrediente9.setUnidadMedida(unidadMedida1);
+            ingrediente10.setUnidadMedida(unidadMedida2);
+            ingrediente11.setUnidadMedida(unidadMedida2);
 
             // Asignar Ingrediente a Rubro
             rubro1.agregarIngrediente(ingrediente1);
@@ -346,13 +381,15 @@ public class Sprint4Application {
             rubro4.agregarIngrediente(ingrediente7);
             rubro4.agregarIngrediente(ingrediente8);
             rubro3.agregarIngrediente(ingrediente9);
+            rubro5.agregarIngrediente(ingrediente10);
+            rubro5.agregarIngrediente(ingrediente11);
 
             //Guardar Rubros con ingredientes y unidad de medida
             rubroIngrdienteRepository.save(rubro1);
             rubroIngrdienteRepository.save(rubro2);
             rubroIngrdienteRepository.save(rubro3);
             rubroIngrdienteRepository.save(rubro4);
-
+            rubroIngrdienteRepository.save(rubro5);
 
             // Crear Rubros de Productos
             RubroProducto rubroProducto1 = RubroProducto.builder()
@@ -362,6 +399,12 @@ public class Sprint4Application {
             RubroProducto rubroProducto2 = RubroProducto.builder()
                     .denominacion("Lomos")
                     .build();
+
+            RubroProducto rubroProducto3 = RubroProducto.builder()
+                    .denominacion("Bebidas")
+                    .build();
+
+
 
 
             // Crear Productos
@@ -385,9 +428,29 @@ public class Sprint4Application {
                     .receta("Cocinar carne 10min, agregar 2 hojas de lechuga, 3 fetas de tomate, 1 feta de queso, 2 cebollas")
                     .build();
 
+            Producto producto3 = Producto.builder()
+                    .denominacion("CocaCola 1.5L")
+                    .descripcion("coca cola sabor original de 1.5 litros, descartable")
+                    .tiempoEstimadoCocina(0)
+                    .precioVenta(1600.00)
+                    .precioCosto(800.00)
+                    .urlImagen("urlCocaCola1.5L")
+                    .build();
+
+            Producto producto4 = Producto.builder()
+                    .denominacion("Agua Mineral 0.6L")
+                    .descripcion("agua mineral descartable de 600 ml")
+                    .tiempoEstimadoCocina(0)
+                    .precioVenta(900.00)
+                    .precioCosto(400.00)
+                    .urlImagen("urlAguaMineral0.6L")
+                    .build();
+
             // Asignar Producto a rubro de Productos
             rubroProducto1.agregarProducto(producto1);
             rubroProducto2.agregarProducto(producto2);
+            rubroProducto3.agregarProducto(producto3);
+            rubroProducto3.agregarProducto(producto4);
 
 
             // Crear DetalleProducto
@@ -443,6 +506,20 @@ public class Sprint4Application {
                     .ingrediente(ingrediente9)
                     .build();
 
+            //Producto 3
+            DetalleProducto detalleProducto31 = DetalleProducto.builder()
+                    .cantidad(1)
+                    .ingrediente(ingrediente10)
+                    .build();
+
+            //Producto
+            DetalleProducto detalleProducto41 = DetalleProducto.builder()
+                    .cantidad(1)
+                    .ingrediente(ingrediente11)
+                    .build();
+
+
+
             // Asignar DetalleProducto a Producto
             producto1.agregarDetalleProducto(detalleProducto11);
             producto1.agregarDetalleProducto(detalleProducto12);
@@ -456,10 +533,14 @@ public class Sprint4Application {
             producto2.agregarDetalleProducto(detalleProducto24);
             producto2.agregarDetalleProducto(detalleProducto25);
 
+            producto3.agregarDetalleProducto((detalleProducto31));
+
+            producto4.agregarDetalleProducto((detalleProducto41));
 
             // Guardar rubro producto con los productos y detalles producto
             rubroProductoRepository.save(rubroProducto1);
             rubroProductoRepository.save(rubroProducto2);
+            rubroProductoRepository.save(rubroProducto3);
 
             // Crear Pedido
             Pedido pedido1 = Pedido.builder()

@@ -14,20 +14,15 @@ import java.util.List;
 public interface EmpleadoRepository extends BaseRepository<Empleado, Long> {
 
     @Query(value = "SELECT e FROM Empleado e WHERE e.nombre LIKE %:filtro% OR e.apellido LIKE %:filtro%")
-    List<Cliente> search(@Param("filtro") String filtro);
+    List<Empleado> search(@Param("filtro") String filtro);
     @Query(value = "SELECT e FROM Empleado e WHERE e.nombre LIKE %:filtro% OR e.apellido LIKE %:filtro%")
-    Page<Cliente> search(@Param("filtro") String filtro, Pageable pageable);
+    Page<Empleado> search(@Param("filtro") String filtro, Pageable pageable);
 
+
+    //Query de inicio de sesion empleado
     @Query(
-            value = "SELECT * FROM empleado WHERE empleado.nombre LIKE %:filtro% OR empleado.apellido LIKE %:filtro%",
-            nativeQuery = true
-    )
-    List<Cliente> searchNativo(@Param("filtro") String filtro);
-    @Query(
-            value = "SELECT * FROM empleado WHERE empleado.nombre LIKE %:filtro% OR empleado.apellido LIKE %:filtro%",
-            countQuery = "SELECT count (*) FROM empleado",
-            nativeQuery = true
-    )
-    Page<Cliente> searchNativo(@Param("filtro") String filtro, Pageable pageable);
+            value="select e from Empleado e where e.usuario.username like %:filtro1% and e.usuario.contraseña like %:filtro2%")
+    Empleado singInEmpleado (@Param("filtro1") String filtro1,@Param("filtro2") String filtro2);
+
 
 }

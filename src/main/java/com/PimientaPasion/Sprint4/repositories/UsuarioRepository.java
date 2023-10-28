@@ -29,4 +29,8 @@ public interface UsuarioRepository extends BaseRepository<Usuario, Long> {
             nativeQuery = true
     )
     Page<Usuario> searchNativo(@Param("filtro") String filtro, Pageable pageable);
+
+
+
+
 }

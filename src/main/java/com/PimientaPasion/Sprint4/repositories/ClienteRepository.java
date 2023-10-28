@@ -2,6 +2,7 @@ package com.PimientaPasion.Sprint4.repositories;
 
 import com.PimientaPasion.Sprint4.entities.Cliente;
 import com.PimientaPasion.Sprint4.entities.Ingrediente;
+import com.PimientaPasion.Sprint4.entities.Usuario;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
@@ -31,5 +32,10 @@ public interface ClienteRepository extends BaseRepository<Cliente, Long> {
             nativeQuery = true
     )
   Page<Cliente> searchNativo(@Param("filtro") String filtro, Pageable pageable);
+
+    //Query de inicio de sesion cliente
+    @Query(
+            value="select c from Cliente c where c.usuario.username like %:filtro1% and c.usuario.contraseña like %:filtro2%")
+    Cliente singInCliente (@Param("filtro1") String filtro1,@Param("filtro2") String filtro2);
 
 }

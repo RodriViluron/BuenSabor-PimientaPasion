@@ -11,4 +11,6 @@ public interface ClienteService extends BaseService<Cliente,Long>{
     List<Cliente> search(String filtro) throws Exception;
 
     Page<Cliente> search(String filtro, Pageable pageable) throws Exception;
+
+    Cliente singInCliente (String filtro1, String filtro2) throws Exception;
 }
