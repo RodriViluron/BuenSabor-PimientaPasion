@@ -15,23 +15,33 @@ import org.springframework.web.bind.annotation.*;
 public class ProductoController extends BaseControllerImpl<Producto, ProductoServiceImpl> {
 
 
-    @Autowired
-    ProductoServiceImpl productoService;
+    //@Autowired
+    //ProductoServiceImpl productoService;
 
     @GetMapping("/buscarPorDenominacion")
     public ResponseEntity<?> buscarPorDenominacion(@RequestParam String denominacion) {
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(productoService.buscarPorDenominacion(denominacion));
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.buscarPorDenominacion(denominacion));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\":\"" + e.getMessage() + "\"}"));
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }
     }
 
     @GetMapping("/buscarPorDenominacionPage")
     public ResponseEntity<?> buscarPorDenominacion(@RequestParam String denominacion, Pageable pageable) {
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(productoService.buscarPorDenominacion(denominacion, pageable));
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.buscarPorDenominacion(denominacion, pageable));
         } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("no hay productos que coincidan con esa búsqueda"));
+        }
+    }
+
+    @GetMapping("/buscarDisponibles")
+    public ResponseEntity<?> buscarDisponibles (){
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.buscarDisponibles());
+        }
+        catch (Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\":\"" + e.getMessage() + "\"}"));
         }
     }

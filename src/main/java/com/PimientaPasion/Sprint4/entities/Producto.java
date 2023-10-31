@@ -44,7 +44,7 @@ public class Producto extends Base {
     private boolean eliminado;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_detalle_producto")
+    @JoinColumn(name = "id_producto")
     @Builder.Default
     private List<DetalleProducto> detalleProducto = new ArrayList<>();
 

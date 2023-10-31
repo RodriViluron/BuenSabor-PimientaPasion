@@ -679,7 +679,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/ingredientes/searchPaged?filtro=Lucas&page=0&size=5",
+							"raw": "http://localhost:8080/api/v1/ingredientes/searchPaged?filtro=lechuga&page=0&size=5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -694,7 +694,7 @@
 							"query": [
 								{
 									"key": "filtro",
-									"value": "Lucas"
+									"value": "lechuga"
 								},
 								{
 									"key": "page",
@@ -742,6 +742,111 @@
 								}
 							]
 						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rubro Producto",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/rubroProductos"
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/rubroProductos/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/rubroProductos/2"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"id\": 2,\r\n    \"eliminado\": true\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/rubroProductos/2"
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"denominacion\": \"Cebolla\",\r\n        \"fechaHoraAlta\": \"\",\r\n        \"fechaHoraBaja\": \"\",\r\n        \"fechaHoraModificacion\": \"\",\r\n        \"precioCompra\": 1300.00,\r\n        \"stockActual\": 90,\r\n        \"stockMinimo\": 75.00,\r\n        \"urlImagen\": \"\"\r\n        \r\n}"
+						},
+						"url": "http://localhost:8080/api/v1/\"id\": 3,\n    \"denominacion\": \"Bebidas\",\n    \"eliminado\": false,\n    \"rubroPadre\": null,/3"
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": ""
+					},
+					"response": []
+				},
+				{
+					"name": "search Page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get all page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": ""
+					},
+					"response": []
+				},
+				{
+					"name": "buscarRubrosProdDisponibles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/rubroProductos/buscarRubrosProdDisponibles"
 					},
 					"response": []
 				}
@@ -820,7 +925,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/producto/search?filtro=a",
+							"raw": "http://localhost:8080/api/v1/productos/buscarPorDenominacion?denominacion=b",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -829,13 +934,13 @@
 							"path": [
 								"api",
 								"v1",
-								"producto",
-								"search"
+								"productos",
+								"buscarPorDenominacion"
 							],
 							"query": [
 								{
-									"key": "filtro",
-									"value": "a"
+									"key": "denominacion",
+									"value": "b"
 								}
 							]
 						}
@@ -848,7 +953,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/articuloManufacturados/searchPaged?filtro=Lucas&page=0&size=5",
+							"raw": "http://localhost:8080/api/v1/productos/buscarPorDenominacionPage?denominacion=l&page=0&size=5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -857,13 +962,13 @@
 							"path": [
 								"api",
 								"v1",
-								"articuloManufacturados",
-								"searchPaged"
+								"productos",
+								"buscarPorDenominacionPage"
 							],
 							"query": [
 								{
-									"key": "filtro",
-									"value": "Lucas"
+									"key": "denominacion",
+									"value": "l"
 								},
 								{
 									"key": "page",
@@ -908,6 +1013,35 @@
 								{
 									"key": "sort",
 									"value": "id,asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarDisponibles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/productos/buscarDisponibles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"productos",
+								"buscarDisponibles"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
 								}
 							]
 						}

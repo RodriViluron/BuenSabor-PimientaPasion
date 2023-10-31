@@ -27,7 +27,7 @@ public class RubroProducto extends Base {
     private RubroProducto rubroPadre;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_producto")
+    @JoinColumn(name = "id_rubro")
     @Builder.Default
     private List<Producto> producto = new ArrayList<>();
 

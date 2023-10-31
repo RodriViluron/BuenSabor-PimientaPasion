@@ -262,6 +262,7 @@ public class Sprint4Application {
                     .stockMinimo(10.0)
                     .precioCompra(5)
                     .urlImagen("urlImagenTomate")
+                    .eliminado(false)
                     .build();
 
             Ingrediente ingrediente2 = Ingrediente.builder()
@@ -270,6 +271,7 @@ public class Sprint4Application {
                     .stockMinimo(10.0)
                     .precioCompra(5)
                     .urlImagen("urlImagenlechuga")
+                    .eliminado(false)
                     .build();
 
             Ingrediente ingrediente3 = Ingrediente.builder()
@@ -278,6 +280,7 @@ public class Sprint4Application {
                     .stockMinimo(10.0)
                     .precioCompra(5)
                     .urlImagen("urlImagenCebolla")
+                    .eliminado(false)
                     .build();
 
             Ingrediente ingrediente4 = Ingrediente.builder()
@@ -286,6 +289,7 @@ public class Sprint4Application {
                     .stockMinimo(10.0)
                     .precioCompra(5)
                     .urlImagen("urlImagenCarne")
+                    .eliminado(false)
                     .build();
 
             Ingrediente ingrediente5 = Ingrediente.builder()
@@ -294,6 +298,7 @@ public class Sprint4Application {
                     .stockMinimo(10.0)
                     .precioCompra(5)
                     .urlImagen("urlImagenLomo")
+                    .eliminado(false)
                     .build();
 
             Ingrediente ingrediente6 = Ingrediente.builder()
@@ -302,6 +307,7 @@ public class Sprint4Application {
                     .stockMinimo(10.0)
                     .precioCompra(5)
                     .urlImagen("urlImagenPanHamburgesaClasico")
+                    .eliminado(false)
                     .build();
 
             Ingrediente ingrediente7 = Ingrediente.builder()
@@ -310,6 +316,7 @@ public class Sprint4Application {
                     .stockMinimo(10.0)
                     .precioCompra(5)
                     .urlImagen("urlImagenQueso")
+                    .eliminado(false)
                     .build();
 
             Ingrediente ingrediente8 = Ingrediente.builder()
@@ -318,6 +325,7 @@ public class Sprint4Application {
                     .stockMinimo(10.0)
                     .precioCompra(5)
                     .urlImagen("urlImagenJamon")
+                    .eliminado(false)
                     .build();
 
             Ingrediente ingrediente9 = Ingrediente.builder()
@@ -326,6 +334,7 @@ public class Sprint4Application {
                     .stockMinimo(10.0)
                     .precioCompra(5)
                     .urlImagen("urlImagenPanLomoClasico")
+                    .eliminado(false)
                     .build();
 
             Ingrediente ingrediente10 = Ingrediente.builder()
@@ -334,6 +343,7 @@ public class Sprint4Application {
                     .stockMinimo(15.0)
                     .precioCompra(100)
                     .urlImagen("urlImagenCocaCola1.5L")
+                    .eliminado(false)
                     .build();
 
             Ingrediente ingrediente11 = Ingrediente.builder()
@@ -342,6 +352,7 @@ public class Sprint4Application {
                     .stockMinimo(15.0)
                     .precioCompra(100)
                     .urlImagen("urlImagenAguaMineral0.6L")
+                    .eliminado(false)
                     .build();
 
             // Crear UnidadMedida
@@ -416,6 +427,7 @@ public class Sprint4Application {
                     .precioCosto(1500.00)
                     .urlImagen("urlImagenHamburguesaClásica")
                     .receta("Cocinar carne 10min, agregar 2 hojas de lechuga, agregar 3 fetas de tomate, 1 feta de queso")
+                    .eliminado(false)
                     .build();
 
             Producto producto2 = Producto.builder()
@@ -426,6 +438,7 @@ public class Sprint4Application {
                     .precioCosto(2000.00)
                     .urlImagen("urlImagenLomoClásico")
                     .receta("Cocinar carne 10min, agregar 2 hojas de lechuga, 3 fetas de tomate, 1 feta de queso, 2 cebollas")
+                    .eliminado(false)
                     .build();
 
             Producto producto3 = Producto.builder()
@@ -435,6 +448,7 @@ public class Sprint4Application {
                     .precioVenta(1600.00)
                     .precioCosto(800.00)
                     .urlImagen("urlCocaCola1.5L")
+                    .eliminado(false)
                     .build();
 
             Producto producto4 = Producto.builder()
@@ -444,6 +458,7 @@ public class Sprint4Application {
                     .precioVenta(900.00)
                     .precioCosto(400.00)
                     .urlImagen("urlAguaMineral0.6L")
+                    .eliminado(false)
                     .build();
 
             // Asignar Producto a rubro de Productos

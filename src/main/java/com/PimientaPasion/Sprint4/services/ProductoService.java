@@ -9,4 +9,6 @@ import java.util.List;
 public interface ProductoService extends BaseService<Producto, Long>{
     List<Producto> buscarPorDenominacion( String denominacion)throws Exception;
     Page<Producto> buscarPorDenominacion(String denominacion, Pageable pageable) throws Exception;
+
+    List<Producto> buscarDisponibles()throws Exception;
 }
