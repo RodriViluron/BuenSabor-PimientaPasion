@@ -1,6 +1,7 @@
 package com.PimientaPasion.Sprint4.controllers;
 
 import com.PimientaPasion.Sprint4.entities.Pedido;
+import com.PimientaPasion.Sprint4.enums.EstadoPedido;
 import com.PimientaPasion.Sprint4.services.PedidoServiceImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -27,6 +28,26 @@ public class PedidoController extends  BaseControllerImpl<Pedido, PedidoServiceI
     public ResponseEntity<?> verDetallePedido (@RequestParam Long id_pedido){
         try{
             return ResponseEntity.status(HttpStatus.OK).body(servicio.verDetallePedido(id_pedido));
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
+
+    @GetMapping("/verFacturaPedido")
+    public ResponseEntity<?> verFacturaPedido (@RequestParam Long id_pedido){
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.verFacturaPedido(id_pedido));
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
+
+    @GetMapping("/buscarPedidoPorEstado")
+    public ResponseEntity<?> buscarPedidoPorEstado(@RequestParam EstadoPedido estado_pedido){
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.buscarPedidoPorEstado(estado_pedido));
         }
         catch (Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));

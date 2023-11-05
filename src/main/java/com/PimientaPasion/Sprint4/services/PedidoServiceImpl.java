@@ -1,12 +1,8 @@
 package com.PimientaPasion.Sprint4.services;
 
-import com.PimientaPasion.Sprint4.VerPeidosClientedtos.DetallePedidoVerDetalleDTO;
-import com.PimientaPasion.Sprint4.VerPeidosClientedtos.PedidoVerDetalleDTO;
-import com.PimientaPasion.Sprint4.VerPeidosClientedtos.PedidoVerPedidoDTO;
-import com.PimientaPasion.Sprint4.VerPeidosClientedtos.ProductoVerDatalleDTO;
-import com.PimientaPasion.Sprint4.entities.DetallePedido;
-import com.PimientaPasion.Sprint4.entities.Pedido;
-import com.PimientaPasion.Sprint4.entities.Producto;
+import com.PimientaPasion.Sprint4.VerPeidosClientedtos.*;
+import com.PimientaPasion.Sprint4.entities.*;
+import com.PimientaPasion.Sprint4.enums.EstadoPedido;
 import com.PimientaPasion.Sprint4.repositories.BaseRepository;
 import com.PimientaPasion.Sprint4.repositories.PedidoRepository;
 import jakarta.transaction.Transactional;
@@ -63,6 +59,40 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido,Long> implements P
             }
             pedidoVerDetalleDTO.setDetallePedidoVerDetalleDTOS(detallePedidoVerDetalleDTOS);
             return pedidoVerDetalleDTO;
+        }
+        catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    @Transactional
+    public FacturaVerFacturaDTO verFacturaPedido(Long id) throws Exception {
+        try{
+            Factura factura=pedidoRepository.verFacturaPedido(id);
+            ModelMapper modelMapper=new ModelMapper();
+            FacturaVerFacturaDTO facturaVerFacturaDTO=modelMapper.map(factura,FacturaVerFacturaDTO.class);
+            List<DetalleFacturaVerFacturaDTO> detalleFacturaVerFacturaDTOS = new ArrayList<DetalleFacturaVerFacturaDTO>();
+            DetalleFacturaVerFacturaDTO detalleFacturaVerFacturaDTOAux;
+            for (DetalleFactura detalleFactura:factura.getDetalleFactura()){
+                detalleFacturaVerFacturaDTOAux=(modelMapper.map(detalleFactura, DetalleFacturaVerFacturaDTO.class));
+                detalleFacturaVerFacturaDTOAux.setProductoVerDatalleDTO(modelMapper.map(detalleFactura.getProducto(),ProductoVerDatalleDTO.class));
+                detalleFacturaVerFacturaDTOS.add(detalleFacturaVerFacturaDTOAux);
+            }
+            facturaVerFacturaDTO.setDetalleFacturaVerFacturaDTOS(detalleFacturaVerFacturaDTOS);
+            return facturaVerFacturaDTO;
+        }
+        catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    @Transactional
+    public List<Pedido> buscarPedidoPorEstado(EstadoPedido pedido_estado) throws Exception {
+        try{
+            List<Pedido>pedidos=pedidoRepository.buscarPedidoPorEstado(pedido_estado);
+            return  pedidos;
         }
         catch (Exception e){
             throw new Exception(e.getMessage());

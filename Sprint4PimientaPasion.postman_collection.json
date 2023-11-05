@@ -338,6 +338,62 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "verFacturaPedido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos/verFacturaPedido?id_pedido=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"verFacturaPedido"
+							],
+							"query": [
+								{
+									"key": "id_pedido",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarPedidoPorEstado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos/buscarPedidoPorEstado?estado_pedido=EN_COCINA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"buscarPedidoPorEstado"
+							],
+							"query": [
+								{
+									"key": "estado_pedido",
+									"value": "EN_COCINA"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
