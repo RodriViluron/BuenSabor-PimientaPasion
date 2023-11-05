@@ -13,5 +13,11 @@ import java.util.List;
 @Repository
 public interface PedidoRepository extends BaseRepository<Pedido,Long> {
 
+    //HU#13 Cliente Visualiza Pedidos (paginado y con DTO)
+    @Query("select p from Pedido p where p.cliente.id = :id_cliente")
+    Page <Pedido> buscarPeidosCliente (@Param("id_cliente") Long id_cliente, Pageable pageable);
 
+    //HU#13 Cliente Visualiza el Detalle Un Pedido
+    @Query("select p from  Pedido p where p.id=:id_pedido")
+    Pedido verDetallePedido (@Param("id_pedido")Long id_pedido);
 }

@@ -67,7 +67,7 @@ public class Pedido extends Base {
     private Domicilio domicilioEntrega;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario")
+    @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
     //-----------------------------------------------------------------------------------

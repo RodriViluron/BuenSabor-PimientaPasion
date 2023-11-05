@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "19710884-79a4-4f23-8e9e-2385b998aa32",
+		"_postman_id": "fb4b42ba-4ae6-49f6-ba3a-a612193eb871",
 		"name": "Sprint4PimientaPasion",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "29770412",
-		"_collection_link": "https://universal-equinox-21901.postman.co/workspace/Team-Workspace~fe78739e-1156-4142-81ae-bde5de831397/collection/29770412-19710884-79a4-4f23-8e9e-2385b998aa32?action=share&source=collection_link&creator=29770412"
+		"_collection_link": "https://universal-equinox-21901.postman.co/workspace/Team-Workspace~fe78739e-1156-4142-81ae-bde5de831397/collection/29770412-fb4b42ba-4ae6-49f6-ba3a-a612193eb871?action=share&source=collection_link&creator=29770412"
 	},
 	"item": [
 		{
@@ -24,7 +24,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/clientes/3"
+						"url": "http://localhost:8080/api/v1/clientes/2"
 					},
 					"response": []
 				},
@@ -44,7 +44,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 2,\r\n    \"nombre\": \"Paula\",\r\n    \"apellido\": \"Perez\",\r\n    \"dni\": 44908769\r\n}",
+							"raw": "{\r\n   \r\n   \"nombre\": \"Roberto\",\r\n    \"apellido\": \"Marin\",\r\n    \"telefono\": \"764467375\",\r\n    \"email\": \"roberto@gmail.com\",\r\n    \"eliminado\": false\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -200,6 +200,139 @@
 								{
 									"key": "filtro2",
 									"value": "rodri"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/clientes/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/clientes/2"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n   \"nombre\": \"Roberto\",\r\n    \"apellido\": \"Marin\",\r\n    \"telefono\": \"764467375\",\r\n    \"email\": \"roberto@gmail.com\",\r\n    \"eliminado\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/clientes/2"
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"nombre\": \"Rodrigo\",\r\n    \"apellido\": \"Viluron\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"rodrigo@gmail.com\"\r\n}"
+						},
+						"url": "http://localhost:8080/api/v1/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "buscarPeidosCliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos/buscarPeidosCliente?id_cliente=1&page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"buscarPeidosCliente"
+							],
+							"query": [
+								{
+									"key": "id_cliente",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verDetallePedido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos/verDetallePedido?id_pedido=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos",
+								"verDetallePedido"
+							],
+							"query": [
+								{
+									"key": "id_pedido",
+									"value": "1"
 								}
 							]
 						}
