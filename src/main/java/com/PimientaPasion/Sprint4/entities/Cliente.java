@@ -30,7 +30,7 @@ public class Cliente extends Base {
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
-    //Relación OneToMany Cliente y Domicilio
+    //Relación OneToMany ClientePedidosDeliveyDTO y Domicilio
      @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
      @JoinColumn(name = "fk_cliente")
      @Builder.Default

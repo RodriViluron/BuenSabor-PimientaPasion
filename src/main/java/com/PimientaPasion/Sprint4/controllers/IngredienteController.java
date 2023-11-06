@@ -28,4 +28,14 @@ public class IngredienteController extends BaseControllerImpl<Ingrediente, Ingre
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error, por favor intente mas tarde\"}");
         }
     }
+
+    @GetMapping("/controlStockIngredientes")
+    public ResponseEntity<?> controlStockIngredientes(){
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.controlStockIngredientes());
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error, por favor intente mas tarde\"}");
+        }
+    }
 }

@@ -30,4 +30,8 @@ public interface IngredienteRepository extends BaseRepository<Ingrediente, Long>
     )
     Page<Ingrediente> searchNativo(@Param("filtro") String filtro, Pageable pageable);
 
+    //HU #24 control de stock
+    @Query("select i from Ingrediente i where i.stockActual < 1.2*i.stockMinimo and i.eliminado!=true")
+    List<Ingrediente>controlStockIngredientes();
+
 }

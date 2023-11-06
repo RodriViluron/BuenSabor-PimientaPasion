@@ -1,5 +1,6 @@
 package com.PimientaPasion.Sprint4.services;
 
+import com.PimientaPasion.Sprint4.RankingDTOs.ClienteRankingDTO;
 import com.PimientaPasion.Sprint4.entities.Cliente;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,4 +14,5 @@ public interface ClienteService extends BaseService<Cliente,Long>{
     Page<Cliente> search(String filtro, Pageable pageable) throws Exception;
 
     Cliente singInCliente (String filtro1, String filtro2) throws Exception;
+
 }

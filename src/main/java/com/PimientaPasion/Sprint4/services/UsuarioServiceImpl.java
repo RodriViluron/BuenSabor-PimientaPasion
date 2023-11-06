@@ -1,7 +1,6 @@
 package com.PimientaPasion.Sprint4.services;
 
-import com.PimientaPasion.Sprint4.entities.Cliente;
-import com.PimientaPasion.Sprint4.entities.Ingrediente;
+
 import com.PimientaPasion.Sprint4.entities.Usuario;
 import com.PimientaPasion.Sprint4.repositories.BaseRepository;
 import com.PimientaPasion.Sprint4.repositories.UsuarioRepository;

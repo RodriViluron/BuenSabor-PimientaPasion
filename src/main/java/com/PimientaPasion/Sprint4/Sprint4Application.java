@@ -165,7 +165,7 @@ public class Sprint4Application {
                     .localidad("Las Heras")
                     .build();
 
-            // Asignar Domicilio a Cliente
+            // Asignar Domicilio a ClientePedidosDeliveyDTO
             cliente1.agregarDomicilio(domicilio1);
             cliente1.agregarDomicilio(domicilio3);
             cliente2.agregarDomicilio(domicilio2);

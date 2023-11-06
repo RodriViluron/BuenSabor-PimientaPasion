@@ -3,6 +3,7 @@ package com.PimientaPasion.Sprint4.services;
 import com.PimientaPasion.Sprint4.entities.Ingrediente;
 import com.PimientaPasion.Sprint4.repositories.BaseRepository;
 import com.PimientaPasion.Sprint4.repositories.IngredienteRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,6 +22,7 @@ public class IngredienteServiceImpl extends BaseServiceImpl<Ingrediente,Long> im
     }
 
     @Override
+    @Transactional
     public List<Ingrediente> search(String filtro) throws Exception {
         try{
             List<Ingrediente> ingredientes = ingredienteRepository.searchNativo(filtro);
@@ -30,6 +32,7 @@ public class IngredienteServiceImpl extends BaseServiceImpl<Ingrediente,Long> im
         }
     }
     @Override
+    @Transactional
     public Page<Ingrediente> search(String filtro, Pageable pageable) throws Exception {
         try{
             Page<Ingrediente> ingredientes= ingredienteRepository.searchNativo(filtro, pageable);
@@ -38,4 +41,17 @@ public class IngredienteServiceImpl extends BaseServiceImpl<Ingrediente,Long> im
             throw new Exception(e.getMessage());
         }
     }
+
+    @Override
+    @Transactional
+    public List<Ingrediente> controlStockIngredientes()throws Exception{
+        try{
+            List<Ingrediente> ingredientes=ingredienteRepository.controlStockIngredientes();
+            return ingredientes;
+        }
+        catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+
 }

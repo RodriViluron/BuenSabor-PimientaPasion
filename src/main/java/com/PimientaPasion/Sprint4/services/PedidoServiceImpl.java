@@ -1,6 +1,9 @@
 package com.PimientaPasion.Sprint4.services;
 
-import com.PimientaPasion.Sprint4.VerPeidosClientedtos.*;
+import com.PimientaPasion.Sprint4.VerPedidosClientedtos.*;
+import com.PimientaPasion.Sprint4.VerPedidosDeliverydtos.ClientePedidosDeliveyDTO;
+import com.PimientaPasion.Sprint4.VerPedidosDeliverydtos.DireccionPedidosDeliveryDTO;
+import com.PimientaPasion.Sprint4.VerPedidosDeliverydtos.PedidoPedidosDeliveryDTO;
 import com.PimientaPasion.Sprint4.entities.*;
 import com.PimientaPasion.Sprint4.enums.EstadoPedido;
 import com.PimientaPasion.Sprint4.repositories.BaseRepository;
@@ -27,9 +30,9 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido,Long> implements P
 
     @Override
     @Transactional
-    public List<PedidoVerPedidoDTO> buscarPeidosCliente(Long id_cliente, Pageable pageable) throws Exception {
+    public List<PedidoVerPedidoDTO> buscarPedidosCliente(Long id_cliente, Pageable pageable) throws Exception {
         try {
-            Page<Pedido> pedidos= pedidoRepository.buscarPeidosCliente(id_cliente,pageable);
+            Page<Pedido> pedidos= pedidoRepository.buscarPedidosCliente(id_cliente,pageable);
             ModelMapper modelMapper = new ModelMapper();
             List<PedidoVerPedidoDTO> pedidoVerPedidoDTOS =new ArrayList<PedidoVerPedidoDTO>();
 
@@ -89,10 +92,18 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido,Long> implements P
 
     @Override
     @Transactional
-    public List<Pedido> buscarPedidoPorEstado(EstadoPedido pedido_estado) throws Exception {
+    public List<PedidoPedidosDeliveryDTO> buscarPedidoPorEstado(EstadoPedido pedido_estado) throws Exception {
         try{
             List<Pedido>pedidos=pedidoRepository.buscarPedidoPorEstado(pedido_estado);
-            return  pedidos;
+            ModelMapper modelMapper=new ModelMapper();
+            List<PedidoPedidosDeliveryDTO> pedidoPedidosDeliveryDTOS=new ArrayList<PedidoPedidosDeliveryDTO>();
+            for (Pedido pedido:pedidos){
+                PedidoPedidosDeliveryDTO pedidoPedidosDeliveryDTO=modelMapper.map(pedido,PedidoPedidosDeliveryDTO.class);
+                pedidoPedidosDeliveryDTO.setClientePedidosDeliveyDTO(modelMapper.map(pedido.getCliente(), ClientePedidosDeliveyDTO.class));
+                pedidoPedidosDeliveryDTO.setDireccionPedidosDeliveryDTO(modelMapper.map(pedido.getDomicilioEntrega(), DireccionPedidosDeliveryDTO.class));
+                pedidoPedidosDeliveryDTOS.add(pedidoPedidosDeliveryDTO);
+            }
+            return  pedidoPedidosDeliveryDTOS;
         }
         catch (Exception e){
             throw new Exception(e.getMessage());

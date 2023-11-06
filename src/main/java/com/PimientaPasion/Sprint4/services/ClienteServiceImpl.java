@@ -1,15 +1,21 @@
 package com.PimientaPasion.Sprint4.services;
 
+import com.PimientaPasion.Sprint4.RankingDTOs.ClienteRankingDTO;
 import com.PimientaPasion.Sprint4.entities.Cliente;
 import com.PimientaPasion.Sprint4.entities.Ingrediente;
+import com.PimientaPasion.Sprint4.entities.Pedido;
 import com.PimientaPasion.Sprint4.repositories.BaseRepository;
 import com.PimientaPasion.Sprint4.repositories.ClienteRepository;
+import com.PimientaPasion.Sprint4.repositories.PedidoRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -17,6 +23,7 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente, Long> implement
 
     @Autowired
     private ClienteRepository clienteRepository;
+
 
     public ClienteServiceImpl(BaseRepository<Cliente, Long> baseRepository, ClienteRepository clienteRepository) {
         super(baseRepository);
@@ -55,5 +62,6 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente, Long> implement
             throw new Exception(e.getMessage());
         }
     }
+
 
 }

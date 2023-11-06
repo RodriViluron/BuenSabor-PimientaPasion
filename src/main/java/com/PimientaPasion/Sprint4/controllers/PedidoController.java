@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path = "api/v1/pedidos")
 public class PedidoController extends  BaseControllerImpl<Pedido, PedidoServiceImpl>{
 
-    @GetMapping("/buscarPeidosCliente")
-    public ResponseEntity<?> buscarPeidosCliente(@RequestParam Long id_cliente, Pageable pageable){
+    @GetMapping("/buscarPedidosCliente")
+    public ResponseEntity<?> buscarPedidosCliente(@RequestParam Long id_cliente, Pageable pageable){
         try{
-            return ResponseEntity.status(HttpStatus.OK).body(servicio.buscarPeidosCliente(id_cliente,pageable));
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.buscarPedidosCliente(id_cliente,pageable));
         }
         catch (Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
@@ -53,4 +53,5 @@ public class PedidoController extends  BaseControllerImpl<Pedido, PedidoServiceI
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }
     }
+
 }

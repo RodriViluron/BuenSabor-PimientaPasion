@@ -39,4 +39,6 @@ public class EmpleadoController extends BaseControllerImpl<Empleado, EmpleadoSer
         }
     }
 
+
+
 }

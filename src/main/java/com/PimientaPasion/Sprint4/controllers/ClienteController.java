@@ -40,4 +40,5 @@ public class ClienteController extends BaseControllerImpl<Cliente, ClienteServic
         }
     }
 
+
 }
