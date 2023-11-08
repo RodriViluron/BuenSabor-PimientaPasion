@@ -75,7 +75,7 @@ public class EmpleadoServiceImpl extends BaseServiceImpl<Empleado,Long> implemen
             if (empleadoId != null) {
                 // Llama al método de repositorio para modificar al empleado por su ID
                 empleadoRepository.modificarEmpleado(empleadoId, nuevoNombre, nuevoApellido, nuevoTelefono, nuevoEmail);
-                // Aquí puedes devolver el empleado actualizado si lo deseas
+                // devuelve el empleado actualizado
                 return empleadoRepository.findById(empleadoId).orElse(null);
             } else {
                 return null;
