@@ -1,9 +1,10 @@
 package com.PimientaPasion.Sprint4.services;
 
+import com.PimientaPasion.Sprint4.DTOs.VerPedidosClientedtos.*;
 import com.PimientaPasion.Sprint4.VerPedidosClientedtos.*;
-import com.PimientaPasion.Sprint4.VerPedidosDeliverydtos.ClientePedidosDeliveyDTO;
-import com.PimientaPasion.Sprint4.VerPedidosDeliverydtos.DireccionPedidosDeliveryDTO;
-import com.PimientaPasion.Sprint4.VerPedidosDeliverydtos.PedidoPedidosDeliveryDTO;
+import com.PimientaPasion.Sprint4.DTOs.VerPedidosDeliverydtos.ClientePedidosDeliveyDTO;
+import com.PimientaPasion.Sprint4.DTOs.VerPedidosDeliverydtos.DireccionPedidosDeliveryDTO;
+import com.PimientaPasion.Sprint4.DTOs.VerPedidosDeliverydtos.PedidoPedidosDeliveryDTO;
 import com.PimientaPasion.Sprint4.entities.*;
 import com.PimientaPasion.Sprint4.enums.EstadoPedido;
 import com.PimientaPasion.Sprint4.repositories.BaseRepository;

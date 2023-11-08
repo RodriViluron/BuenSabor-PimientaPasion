@@ -1,9 +1,9 @@
 package com.PimientaPasion.Sprint4.services;
 
-import com.PimientaPasion.Sprint4.VerPedidosClientedtos.FacturaVerFacturaDTO;
-import com.PimientaPasion.Sprint4.VerPedidosClientedtos.PedidoVerDetalleDTO;
-import com.PimientaPasion.Sprint4.VerPedidosClientedtos.PedidoVerPedidoDTO;
-import com.PimientaPasion.Sprint4.VerPedidosDeliverydtos.PedidoPedidosDeliveryDTO;
+import com.PimientaPasion.Sprint4.DTOs.VerPedidosClientedtos.FacturaVerFacturaDTO;
+import com.PimientaPasion.Sprint4.DTOs.VerPedidosClientedtos.PedidoVerDetalleDTO;
+import com.PimientaPasion.Sprint4.DTOs.VerPedidosClientedtos.PedidoVerPedidoDTO;
+import com.PimientaPasion.Sprint4.DTOs.VerPedidosDeliverydtos.PedidoPedidosDeliveryDTO;
 import com.PimientaPasion.Sprint4.entities.Pedido;
 import com.PimientaPasion.Sprint4.enums.EstadoPedido;
 import org.springframework.data.domain.Pageable;

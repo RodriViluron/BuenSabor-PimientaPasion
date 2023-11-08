@@ -1,4 +1,4 @@
-package com.PimientaPasion.Sprint4.VerPeidosClientedtos;
+package com.PimientaPasion.Sprint4.DTOs.VerPeidosClientedtos;
 
 import com.PimientaPasion.Sprint4.enums.FormaPago;
 import lombok.AllArgsConstructor;

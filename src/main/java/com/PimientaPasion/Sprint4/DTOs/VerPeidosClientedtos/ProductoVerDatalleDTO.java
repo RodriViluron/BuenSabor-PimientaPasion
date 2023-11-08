@@ -1,4 +1,4 @@
-package com.PimientaPasion.Sprint4.VerPeidosClientedtos;
+package com.PimientaPasion.Sprint4.DTOs.VerPeidosClientedtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

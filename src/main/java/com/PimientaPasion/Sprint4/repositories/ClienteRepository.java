@@ -36,7 +36,7 @@ public interface ClienteRepository extends BaseRepository<Cliente, Long> {
     )
     Page<Cliente> searchNativo(@Param("filtro") String filtro, Pageable pageable);
 
-    //Query de inicio de sesion cliente
+    //HU #02 Query de inicio de sesion cliente
     @Query(
             value="select c from Cliente c where c.usuario.username = :filtro1 and c.usuario.contraseña = :filtro2")
     Cliente singInCliente (@Param("filtro1") String filtro1,@Param("filtro2") String filtro2);

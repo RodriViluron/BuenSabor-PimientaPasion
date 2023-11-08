@@ -10,7 +10,7 @@ import java.util.List;
 public interface RubroProductoRepository extends BaseRepository<RubroProducto, Long> {
 
 
-    //Query para presentar productos en el menu
+    //HU #09 Query para presentar productos en el menu
     @Query("select rp from RubroProducto  rp where rp.eliminado=false OR rp.eliminado=null")
     List<RubroProducto> buscarRubrosProdDisponibles();
 
