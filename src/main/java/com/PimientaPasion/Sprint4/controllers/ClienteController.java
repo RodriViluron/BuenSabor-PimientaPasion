@@ -40,5 +40,25 @@ public class ClienteController extends BaseControllerImpl<Cliente, ClienteServic
         }
     }
 
+    @PutMapping ("/modificarCliente")
+    public ResponseEntity<?> modificarCliente(
+            @RequestParam Long clienteId,
+            @RequestParam String nuevoNombre,
+            @RequestParam String nuevoApellido,
+            @RequestParam String nuevoTelefono,
+            @RequestParam String nuevoEmail
+    ) {
+        try {
+            Cliente clienteModificado = servicio.modificarCliente(clienteId, nuevoNombre, nuevoApellido, nuevoTelefono, nuevoEmail);
+            if (clienteModificado != null) {
+                return ResponseEntity.status(HttpStatus.OK).body(clienteModificado);
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Cliente no encontrado\"}");
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error al modificar el cliente\"}");
+        }
+    }
+
 
 }

@@ -63,5 +63,35 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente, Long> implement
         }
     }
 
+    @Override
+    @Transactional
+    public void eliminarCliente(Long clienteId) throws Exception {
+        try {
+            //if (clienteId != null) {
+            clienteRepository.eliminarCliente(clienteId);
+
+            //}
+
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    @Transactional
+    public Cliente modificarCliente(Long clienteId, String nuevoNombre, String nuevoApellido, String nuevoTelefono, String nuevoEmail) throws Exception {
+        try {
+            if (clienteId != null) {
+                // Llama al método de repositorio para modificar el cliente por su ID
+                Cliente cliente = clienteRepository.modificarCliente(clienteId, nuevoNombre, nuevoApellido, nuevoTelefono, nuevoEmail);
+                return cliente;
+            } else {
+                return null;
+            }
+
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
 
 }

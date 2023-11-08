@@ -15,4 +15,7 @@ public interface ClienteService extends BaseService<Cliente,Long>{
 
     Cliente singInCliente (String filtro1, String filtro2) throws Exception;
 
+    void eliminarCliente (Long clienteId) throws Exception;
+
+    Cliente modificarCliente(Long clienteId, String nuevoNombre, String nuevoApellido, String nuevoTelefono, String nuevoEmail) throws Exception;
 }
