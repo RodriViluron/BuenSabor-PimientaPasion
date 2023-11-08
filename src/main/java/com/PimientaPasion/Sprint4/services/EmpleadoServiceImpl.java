@@ -1,5 +1,6 @@
 package com.PimientaPasion.Sprint4.services;
 
+import com.PimientaPasion.Sprint4.entities.Cliente;
 import com.PimientaPasion.Sprint4.entities.Empleado;
 import com.PimientaPasion.Sprint4.repositories.BaseRepository;
 
@@ -51,6 +52,35 @@ public class EmpleadoServiceImpl extends BaseServiceImpl<Empleado,Long> implemen
             return empleado;
         }
         catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    @Transactional
+    public void eliminarEmpleado(Long empleadoId) throws Exception {
+        try {
+            if (empleadoId != null) {
+                // Llama al método de repositorio para dar de baja al empleado por su ID
+                empleadoRepository.eliminarEmpleado(empleadoId);
+            }
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    public Empleado modificarEmpleado(Long empleadoId, String nuevoNombre, String nuevoApellido, String nuevoTelefono, String nuevoEmail) throws Exception {
+        try {
+            if (empleadoId != null) {
+                // Llama al método de repositorio para modificar al empleado por su ID
+                empleadoRepository.modificarEmpleado(empleadoId, nuevoNombre, nuevoApellido, nuevoTelefono, nuevoEmail);
+                // Aquí puedes devolver el empleado actualizado si lo deseas
+                return empleadoRepository.findById(empleadoId).orElse(null);
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
     }

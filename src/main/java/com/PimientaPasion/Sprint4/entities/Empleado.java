@@ -24,6 +24,8 @@ public class Empleado extends Base{
 
     private String email;
 
+    private boolean eliminado;
+
     @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;

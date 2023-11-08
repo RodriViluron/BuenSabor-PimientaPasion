@@ -16,4 +16,8 @@ public interface EmpleadoService extends BaseService <Empleado,Long> {
 
     Empleado singInEmpleado (String filtro1, String filtro2) throws Exception;
 
+    void eliminarEmpleado (Long empleadoId) throws Exception;
+
+    Empleado modificarEmpleado (Long empleadoId, String nuevoNombre, String nuevoApellido, String nuevoTelefono, String nuevoEmail) throws Exception;
+
 }
