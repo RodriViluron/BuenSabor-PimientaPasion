@@ -4,8 +4,15 @@ import com.PimientaPasion.Sprint4.entities.Factura;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.Date;
 import java.util.List;
 
 public interface FacturaService extends BaseService<Factura,Long> {
+
+    Double totalIngresos(Date fechaInicio, Date fechaFin) throws Exception;
+
+    Double totalCostos(Date fechaInicio, Date fechaFin) throws Exception;
+
+    Double totalGanancias(Date fechaInicio, Date fechaFin) throws Exception;
 
 }
