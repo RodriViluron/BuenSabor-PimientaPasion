@@ -1,6 +1,6 @@
 package com.PimientaPasion.Sprint4.services;
 
-import com.PimientaPasion.Sprint4.RankingDTOs.ClienteRankingDTO;
+import com.PimientaPasion.Sprint4.DTOs.ClienteRankingDTO;
 import com.PimientaPasion.Sprint4.entities.Cliente;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -20,4 +20,8 @@ public interface ClienteService extends BaseService<Cliente,Long>{
     void eliminarCliente (Long clienteId) throws Exception;
 
     Cliente modificarCliente(Long clienteId, String nuevoNombre, String nuevoApellido, String nuevoTelefono, String nuevoEmail) throws Exception;
+
+    List<ClienteRankingDTO> searchMejoresClientes(Date fechaInicio, Date fechaFin) throws Exception;
+
+
 }

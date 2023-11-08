@@ -1,6 +1,5 @@
 package com.PimientaPasion.Sprint4.services;
 
-import com.PimientaPasion.Sprint4.RankingDTOs.ClienteRankingDTO;
 import com.PimientaPasion.Sprint4.VerPedidosClientedtos.FacturaVerFacturaDTO;
 import com.PimientaPasion.Sprint4.VerPedidosClientedtos.PedidoVerDetalleDTO;
 import com.PimientaPasion.Sprint4.VerPedidosClientedtos.PedidoVerPedidoDTO;
@@ -8,9 +7,7 @@ import com.PimientaPasion.Sprint4.VerPedidosDeliverydtos.PedidoPedidosDeliveryDT
 import com.PimientaPasion.Sprint4.entities.Pedido;
 import com.PimientaPasion.Sprint4.enums.EstadoPedido;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.repository.query.Param;
 
-import java.util.Date;
 import java.util.List;
 
 public interface PedidoService extends BaseService<Pedido,Long> {

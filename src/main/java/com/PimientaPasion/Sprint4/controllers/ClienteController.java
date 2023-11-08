@@ -1,7 +1,7 @@
 package com.PimientaPasion.Sprint4.controllers;
 
 
-import com.PimientaPasion.Sprint4.RankingDTOs.ClienteRankingDTO;
+import com.PimientaPasion.Sprint4.DTOs.ClienteRankingDTO;
 import com.PimientaPasion.Sprint4.entities.Cliente;
 import com.PimientaPasion.Sprint4.services.ClienteServiceImpl;
 import org.springframework.data.domain.Pageable;
@@ -45,7 +45,7 @@ public class ClienteController extends BaseControllerImpl<Cliente, ClienteServic
         }
     }
 
-<<<<<<< HEAD
+
     @PutMapping ("/eliminarCliente")
     public ResponseEntity<?> eliminarCliente(@RequestParam Long clienteId) {
         try {
@@ -55,28 +55,6 @@ public class ClienteController extends BaseControllerImpl<Cliente, ClienteServic
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error al eliminar el cliente\"}");
         }
     }
-=======
-    @PutMapping ("/modificarCliente")
-    public ResponseEntity<?> modificarCliente(
-            @RequestParam Long clienteId,
-            @RequestParam String nuevoNombre,
-            @RequestParam String nuevoApellido,
-            @RequestParam String nuevoTelefono,
-            @RequestParam String nuevoEmail
-    ) {
-        try {
-            Cliente clienteModificado = servicio.modificarCliente(clienteId, nuevoNombre, nuevoApellido, nuevoTelefono, nuevoEmail);
-            if (clienteModificado != null) {
-                return ResponseEntity.status(HttpStatus.OK).body(clienteModificado);
-            } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Cliente no encontrado\"}");
-            }
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error al modificar el cliente\"}");
-        }
-    }
-
->>>>>>> origin/main
 
     @PutMapping ("/modificarCliente")
     public ResponseEntity<?> modificarCliente(
@@ -97,10 +75,13 @@ public class ClienteController extends BaseControllerImpl<Cliente, ClienteServic
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error al modificar el cliente\"}");
         }
     }
+
+
+
 
     @GetMapping("/searchMejoresClientes")
-    public ResponseEntity<?> searchMejoresClientes(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date fechaInicio,
-                                               @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date fechaFin) {
+    public ResponseEntity<?> searchMejoresClientes(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaInicio,
+                                                   @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaFin) {
         try {
             List<ClienteRankingDTO> clientesRanking = servicio.searchMejoresClientes(fechaInicio, fechaFin);
             return ResponseEntity.status(HttpStatus.OK).body(clientesRanking);

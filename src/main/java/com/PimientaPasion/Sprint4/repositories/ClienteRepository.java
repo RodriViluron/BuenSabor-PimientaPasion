@@ -1,5 +1,6 @@
 package com.PimientaPasion.Sprint4.repositories;
 
+import com.PimientaPasion.Sprint4.DTOs.ClienteRankingDTO;
 import com.PimientaPasion.Sprint4.entities.Cliente;
 import com.PimientaPasion.Sprint4.entities.Ingrediente;
 import com.PimientaPasion.Sprint4.entities.Usuario;
@@ -43,10 +44,10 @@ public interface ClienteRepository extends BaseRepository<Cliente, Long> {
 
     // HU #26 query searchMejoresClientes
     @Query("SELECT c.nombre, c.apellido, COUNT(p.cliente.id) AS cantidadPedidos, SUM(p.totalPedido) AS totalCompras " +
-                    "FROM Cliente c JOIN Pedido p ON c.id = p.cliente.id " +
-                    "WHERE p.fechaPedido BETWEEN :fechaInicio AND :fechaFin " +
-                    "GROUP BY c.id " +
-                    "ORDER BY COUNT(p.cliente) DESC"
+            "FROM Cliente c JOIN Pedido p ON c.id = p.cliente.id " +
+            "WHERE p.fechaPedido BETWEEN :fechaInicio AND :fechaFin " +
+            "GROUP BY c.id " +
+            "ORDER BY COUNT(p.cliente) DESC"
 
     )
     List<Object[]> searchMejoresClientes(@Param("fechaInicio") Date fechaInicio, @Param("fechaFin") Date fechaFin);

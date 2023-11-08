@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "fb4b42ba-4ae6-49f6-ba3a-a612193eb871",
+		"_postman_id": "36c32a8d-a62e-4ef3-8b00-d893f956f746",
 		"name": "Sprint4PimientaPasion",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "29770412",
-		"_collection_link": "https://universal-equinox-21901.postman.co/workspace/Team-Workspace~fe78739e-1156-4142-81ae-bde5de831397/collection/29770412-fb4b42ba-4ae6-49f6-ba3a-a612193eb871?action=share&source=collection_link&creator=29770412"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29639444",
+		"_collection_link": "https://blue-star-756672.postman.co/workspace/Pimienta-Pasion~853c55d4-6a14-4a56-ae79-e4613103a5be/collection/29639444-36c32a8d-a62e-4ef3-8b00-d893f956f746?action=share&source=collection_link&creator=29639444"
 	},
 	"item": [
 		{
@@ -15,7 +15,19 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/clientes"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes"
+							]
+						}
 					},
 					"response": []
 				},
@@ -24,7 +36,20 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/clientes/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -33,7 +58,20 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/clientes/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -51,7 +89,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/api/v1/clientes/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -70,7 +121,19 @@
 							"mode": "raw",
 							"raw": "{\r\n\r\n    \"nombre\": \"Rodrigo\",\r\n    \"apellido\": \"Viluron\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"rodrigo@gmail.com\"\r\n}"
 						},
-						"url": "http://localhost:8080/api/v1/clientes"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes"
+							]
+						}
 					},
 					"response": []
 				},
@@ -205,6 +268,114 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "searchMejoresClientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes/searchMejoresClientes?fechaInicio=2002-09-09&fechaFin=2024-09-09",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes",
+								"searchMejoresClientes"
+							],
+							"query": [
+								{
+									"key": "fechaInicio",
+									"value": "2002-09-09"
+								},
+								{
+									"key": "fechaFin",
+									"value": "2024-09-09"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modificarCliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes/modificarCliente?clienteId=3&nuevoNombre=Luis&nuevoApellido=Sanchez&nuevoTelefono=456789123&nuevoEmail=luis@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes",
+								"modificarCliente"
+							],
+							"query": [
+								{
+									"key": "clienteId",
+									"value": "3"
+								},
+								{
+									"key": "nuevoNombre",
+									"value": "Luis"
+								},
+								{
+									"key": "nuevoApellido",
+									"value": "Sanchez"
+								},
+								{
+									"key": "nuevoTelefono",
+									"value": "456789123"
+								},
+								{
+									"key": "nuevoEmail",
+									"value": "luis@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarCliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes/eliminarCliente?clienteId=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes",
+								"eliminarCliente"
+							],
+							"query": [
+								{
+									"key": "clienteId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -216,7 +387,19 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/clientes"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"pedidos"
+							]
+						}
 					},
 					"response": []
 				},
@@ -225,7 +408,20 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/clientes/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -234,7 +430,20 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/clientes/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -252,7 +461,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/api/v1/clientes/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -271,17 +493,29 @@
 							"mode": "raw",
 							"raw": "{\r\n\r\n    \"nombre\": \"Rodrigo\",\r\n    \"apellido\": \"Viluron\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"rodrigo@gmail.com\"\r\n}"
 						},
-						"url": "http://localhost:8080/api/v1/clientes"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clientes"
+							]
+						}
 					},
 					"response": []
 				},
 				{
-					"name": "buscarPedidosCliente",
+					"name": "buscarPeidosCliente",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/pedidos/buscarPedidosCliente?id_cliente=1&page=0&size=10",
+							"raw": "http://localhost:8080/api/v1/pedidos/buscarPeidosCliente?id_cliente=1&page=0&size=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -291,7 +525,7 @@
 								"api",
 								"v1",
 								"pedidos",
-								"buscarPedidosCliente"
+								"buscarPeidosCliente"
 							],
 							"query": [
 								{
@@ -405,7 +639,19 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/empleados"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/empleados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"empleados"
+							]
+						}
 					},
 					"response": []
 				},
@@ -414,7 +660,20 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/clientes/3"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/empleados/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"empleados",
+								"3"
+							]
+						}
 					},
 					"response": []
 				},
@@ -423,7 +682,20 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/clientes/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/empleados/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"empleados",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -434,14 +706,27 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 2,\r\n    \"nombre\": \"Paula\",\r\n    \"apellido\": \"Perez\",\r\n    \"dni\": 44908769\r\n}",
+							"raw": "{\r\n    \"nombre\": \"Paula\",\r\n    \"apellido\": \"Perez\",\r\n    \"dni\": 44908769\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://localhost:8080/api/v1/clientes/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/empleados/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"empleados",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -458,9 +743,22 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\r\n    \"nombre\": \"Rodrigo\",\r\n    \"apellido\": \"Viluron\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"rodrigo@gmail.com\"\r\n}"
+							"raw": "{\r\n    \"nombre\": \"Rodrigo\",\r\n    \"apellido\": \"Viluron\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"rodrigo@gmail.com\"\r\n}"
 						},
-						"url": "http://localhost:8080/api/v1/clientes"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/empleados/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"empleados",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -498,7 +796,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/clientes/searchPaged?filtro=o&page=0&size=5",
+							"raw": "http://localhost:8080/api/v1/empleados/searchPaged?filtro=o&page=0&size=5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -507,7 +805,7 @@
 							"path": [
 								"api",
 								"v1",
-								"clientes",
+								"empleados",
 								"searchPaged"
 							],
 							"query": [
@@ -534,7 +832,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/clientes/paged?page=0&size=2&sort=id,asc",
+							"raw": "http://localhost:8080/api/v1/empleados/paged?page=0&size=2&sort=id,asc",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -543,7 +841,7 @@
 							"path": [
 								"api",
 								"v1",
-								"clientes",
+								"empleados",
 								"paged"
 							],
 							"query": [
@@ -606,7 +904,19 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/domicilios"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/domicilios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"domicilios"
+							]
+						}
 					},
 					"response": []
 				},
@@ -615,7 +925,20 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/domicilios/3"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/domicilios/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"domicilios",
+								"3"
+							]
+						}
 					},
 					"response": []
 				},
@@ -624,7 +947,20 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/domicilios/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/domicilios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"domicilios",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -642,7 +978,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/api/v1/domicilios/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/domicilios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"domicilios",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -661,7 +1010,19 @@
 							"mode": "raw",
 							"raw": "{\r\n     \"calle\": \"Belgrano\",\r\n    \"numeroDomicilio\": \"234\",\r\n    \"codigoPostal\": \"5534\",\r\n    \"localidad\": \"Ciudad\",\r\n    \"numeroDpto\": \"2\",\r\n    \"pisoDpto\": \"1\"\r\n}"
 						},
-						"url": "http://localhost:8080/api/v1/domicilios"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/domicilios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"domicilios"
+							]
+						}
 					},
 					"response": []
 				},
@@ -775,7 +1136,19 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/ingredientes"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ingredientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ingredientes"
+							]
+						}
 					},
 					"response": []
 				},
@@ -784,7 +1157,20 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/ingredientes/3"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ingredientes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ingredientes",
+								"3"
+							]
+						}
 					},
 					"response": []
 				},
@@ -793,7 +1179,20 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/ingredientes/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ingredientes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ingredientes",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -811,7 +1210,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/api/v1/ingredientes/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ingredientes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ingredientes",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -830,7 +1242,20 @@
 							"mode": "raw",
 							"raw": "{\r\n        \"denominacion\": \"Cebolla\",\r\n        \"fechaHoraAlta\": \"\",\r\n        \"fechaHoraBaja\": \"\",\r\n        \"fechaHoraModificacion\": \"\",\r\n        \"precioCompra\": 1300.00,\r\n        \"stockActual\": 90,\r\n        \"stockMinimo\": 75.00,\r\n        \"urlImagen\": \"\"\r\n        \r\n}"
 						},
-						"url": "http://localhost:8080/api/v1/ingredientes/3"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ingredientes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ingredientes",
+								"3"
+							]
+						}
 					},
 					"response": []
 				},
@@ -944,7 +1369,19 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/rubroProductos"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubroProductos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubroProductos"
+							]
+						}
 					},
 					"response": []
 				},
@@ -953,7 +1390,20 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/rubroProductos/3"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubroProductos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubroProductos",
+								"3"
+							]
+						}
 					},
 					"response": []
 				},
@@ -962,7 +1412,20 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/rubroProductos/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubroProductos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubroProductos",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -980,7 +1443,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/api/v1/rubroProductos/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubroProductos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubroProductos",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -999,7 +1475,20 @@
 							"mode": "raw",
 							"raw": "{\r\n        \"denominacion\": \"Cebolla\",\r\n        \"fechaHoraAlta\": \"\",\r\n        \"fechaHoraBaja\": \"\",\r\n        \"fechaHoraModificacion\": \"\",\r\n        \"precioCompra\": 1300.00,\r\n        \"stockActual\": 90,\r\n        \"stockMinimo\": 75.00,\r\n        \"urlImagen\": \"\"\r\n        \r\n}"
 						},
-						"url": "http://localhost:8080/api/v1/\"id\": 3,\n    \"denominacion\": \"Bebidas\",\n    \"eliminado\": false,\n    \"rubroPadre\": null,/3"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/\"id\": 3,\n    \"denominacion\": \"Bebidas\",\n    \"eliminado\": false,\n    \"rubroPadre\": null,/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"\"id\": 3,\n    \"denominacion\": \"Bebidas\",\n    \"eliminado\": false,\n    \"rubroPadre\": null,",
+								"3"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1008,7 +1497,9 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": ""
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
@@ -1017,7 +1508,9 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": ""
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
@@ -1026,7 +1519,9 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": ""
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
@@ -1035,7 +1530,20 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/rubroProductos/buscarRubrosProdDisponibles"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubroProductos/buscarRubrosProdDisponibles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubroProductos",
+								"buscarRubrosProdDisponibles"
+							]
+						}
 					},
 					"response": []
 				}
@@ -1049,7 +1557,19 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/productos"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"productos"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1058,7 +1578,20 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/productos/3"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/productos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"productos",
+								"3"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1067,7 +1600,20 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/productos/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/productos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"productos",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1085,7 +1631,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/api/v1/articuloManufacturados/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articuloManufacturados/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articuloManufacturados",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1104,7 +1663,19 @@
 							"mode": "raw",
 							"raw": "{\r\n        \"nombre\": \"Lucas\",\r\n        \"apellido\": \"Martinez\",\r\n        \"dni\": 43635876,\r\n        \"domicilio\": {\r\n            \"calle\": \"Catamarca\",\r\n            \"numero\": 144,\r\n            \"localidad\": {\r\n                \"id\": 1,\r\n                \"denominacion\": \"Lujan\"\r\n            }\r\n        },\r\n        \"libros\": [\r\n            {\r\n                \"titulo\": \"los dias del venado\",\r\n                \"fecha\": 2012,\r\n                \"genero\": \"fantastico\",\r\n                \"paginas\": 329,\r\n                \"autores\": [\r\n                    {\r\n                        \"id\": 1,\r\n                        \"nombre\": \"Liliana\",\r\n                        \"apellido\": \"Bodoc\",\r\n                        \"biografia\": \"Liliana Chiavetta, mejor conocida como Liliana Bodoc (Santa Fe, 21de julio de 1958-Mendoza, 6 de febrero de 2018),1​ fue una escritora y poeta argentina que se especializó en literatura juvenil e adulta. Con su trilogía La saga de los confines se mostró como la revelación argentina en el género de la épica y la literatura fantástica; y sus libros fueron traducidos al alemán, francés, neerlandés, japonés, polaco, inglés e italiano\"\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n}"
 						},
-						"url": "http://localhost:8080/api/v1/articuloManufacturados"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articuloManufacturados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articuloManufacturados"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1247,7 +1818,19 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/facturas"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1256,7 +1839,20 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/facturas/3"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas",
+								"3"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1265,7 +1861,20 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/facturas/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1283,7 +1892,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/api/v1/facturas/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1302,7 +1924,19 @@
 							"mode": "raw",
 							"raw": "{\r\n        \"nombre\": \"Lucas\",\r\n        \"apellido\": \"Martinez\",\r\n        \"dni\": 43635876,\r\n        \"domicilio\": {\r\n            \"calle\": \"Catamarca\",\r\n            \"numero\": 144,\r\n            \"localidad\": {\r\n                \"id\": 1,\r\n                \"denominacion\": \"Lujan\"\r\n            }\r\n        },\r\n        \"libros\": [\r\n            {\r\n                \"titulo\": \"los dias del venado\",\r\n                \"fecha\": 2012,\r\n                \"genero\": \"fantastico\",\r\n                \"paginas\": 329,\r\n                \"autores\": [\r\n                    {\r\n                        \"id\": 1,\r\n                        \"nombre\": \"Liliana\",\r\n                        \"apellido\": \"Bodoc\",\r\n                        \"biografia\": \"Liliana Chiavetta, mejor conocida como Liliana Bodoc (Santa Fe, 21de julio de 1958-Mendoza, 6 de febrero de 2018),1​ fue una escritora y poeta argentina que se especializó en literatura juvenil e adulta. Con su trilogía La saga de los confines se mostró como la revelación argentina en el género de la épica y la literatura fantástica; y sus libros fueron traducidos al alemán, francés, neerlandés, japonés, polaco, inglés e italiano\"\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n}"
 						},
-						"url": "http://localhost:8080/api/v1/facturas"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1405,6 +2039,38 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "totalIngresos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/facturas/totalIngresos?fechaInicio=2023-08-10&fechaFin=2023-10-10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"facturas",
+								"totalIngresos"
+							],
+							"query": [
+								{
+									"key": "fechaInicio",
+									"value": "2023-08-10"
+								},
+								{
+									"key": "fechaFin",
+									"value": "2023-10-10"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -1416,7 +2082,19 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/usuarios"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"usuarios"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1425,7 +2103,20 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/usuarios/3"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuarios/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"usuarios",
+								"3"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1434,7 +2125,20 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "http://localhost:8080/api/v1/usuarios/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuarios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"usuarios",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1452,7 +2156,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/api/v1/usuarios/2"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuarios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"usuarios",
+								"2"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1471,7 +2188,19 @@
 							"mode": "raw",
 							"raw": "{\r\n        \"nombre\": \"Lucas\",\r\n        \"apellido\": \"Martinez\",\r\n        \"dni\": 43635876,\r\n        \"domicilio\": {\r\n            \"calle\": \"Catamarca\",\r\n            \"numero\": 144,\r\n            \"localidad\": {\r\n                \"id\": 1,\r\n                \"denominacion\": \"Lujan\"\r\n            }\r\n        },\r\n        \"libros\": [\r\n            {\r\n                \"titulo\": \"los dias del venado\",\r\n                \"fecha\": 2012,\r\n                \"genero\": \"fantastico\",\r\n                \"paginas\": 329,\r\n                \"autores\": [\r\n                    {\r\n                        \"id\": 1,\r\n                        \"nombre\": \"Liliana\",\r\n                        \"apellido\": \"Bodoc\",\r\n                        \"biografia\": \"Liliana Chiavetta, mejor conocida como Liliana Bodoc (Santa Fe, 21de julio de 1958-Mendoza, 6 de febrero de 2018),1​ fue una escritora y poeta argentina que se especializó en literatura juvenil e adulta. Con su trilogía La saga de los confines se mostró como la revelación argentina en el género de la épica y la literatura fantástica; y sus libros fueron traducidos al alemán, francés, neerlandés, japonés, polaco, inglés e italiano\"\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n}"
 						},
-						"url": "http://localhost:8080/api/v1/usuarios"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"usuarios"
+							]
+						}
 					},
 					"response": []
 				},

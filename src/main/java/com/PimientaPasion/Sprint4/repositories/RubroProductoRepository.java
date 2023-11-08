@@ -16,4 +16,5 @@ public interface RubroProductoRepository extends BaseRepository<RubroProducto, L
 
 
 
+
 }

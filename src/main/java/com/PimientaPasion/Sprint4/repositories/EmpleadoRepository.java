@@ -4,7 +4,6 @@ import com.PimientaPasion.Sprint4.entities.Cliente;
 import com.PimientaPasion.Sprint4.entities.Empleado;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -25,13 +24,12 @@ public interface EmpleadoRepository extends BaseRepository<Empleado, Long> {
     Empleado singInEmpleado (@Param("filtro1") String filtro1,@Param("filtro2") String filtro2);
 
     //Query Eliminar Empleado
-    @Modifying
+
     @Query(value = "UPDATE Empleado c SET c.eliminado = true WHERE c.id = :empleadoId")
     void eliminarEmpleado (@Param("empleadoId") Long empleadoId);
 
     //Query Modificar Empleado
 
-    @Modifying
     @Query("UPDATE Empleado e SET e.nombre = :nuevoNombre, e.apellido = :nuevoApellido, e.telefono = :nuevoTelefono, e.email = :nuevoEmail WHERE e.id = :empleadoId")
     void modificarEmpleado(
             @Param("empleadoId") Long empleadoId,
