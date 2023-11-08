@@ -39,4 +39,29 @@ public interface ClienteRepository extends BaseRepository<Cliente, Long> {
             value="select c from Cliente c where c.usuario.username = :filtro1 and c.usuario.contraseña = :filtro2")
     Cliente singInCliente (@Param("filtro1") String filtro1,@Param("filtro2") String filtro2);
 
+    // HU #26 query searchMejoresClientes
+    @Query("SELECT c.nombre, c.apellido, COUNT(p.cliente.id) AS cantidadPedidos, SUM(p.totalPedido) AS totalCompras " +
+                    "FROM Cliente c JOIN Pedido p ON c.id = p.cliente.id " +
+                    "WHERE p.fechaPedido BETWEEN :fechaInicio AND :fechaFin " +
+                    "GROUP BY c.id " +
+                    "ORDER BY COUNT(p.cliente) DESC"
+
+    )
+    List<Object[]> searchMejoresClientes(@Param("fechaInicio") Date fechaInicio, @Param("fechaFin") Date fechaFin);
+
+/*
+    //HU #01
+
+    @Query(value = "INSERT INTO cliente (nombre, apellido, direccion, departamento, telefono, email, contrasena, rol) " +
+            "SELECT :nombre, :apellido, :direccion, :departamento, :telefono, :email, :contrasena, 'cliente' " +
+            "WHERE NOT EXISTS (SELECT 1 FROM cliente WHERE email = :email) " +
+            "AND LENGTH(:contrasena) >= 8 " +
+            "AND :contrasena LIKE '%[A-Z]%' " +
+            "AND :contrasena LIKE '%[a-z]%' " +
+            "AND :contrasena LIKE '%[^a-zA-Z0-9]%'")
+
+    Cliente crearCliente(@Param("nombre") String nombre, @Param("apellido") String apellido, @Param("direccion") String direccion,
+                         @Param("departamento") String departamento, @Param("telefono") String telefono,
+                         @Param("email") String email, @Param("contrasena") String contrasena);
+*/
 }

@@ -4,7 +4,9 @@ import com.PimientaPasion.Sprint4.RankingDTOs.ClienteRankingDTO;
 import com.PimientaPasion.Sprint4.entities.Cliente;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.query.Param;
 
+import java.util.Date;
 import java.util.List;
 
 

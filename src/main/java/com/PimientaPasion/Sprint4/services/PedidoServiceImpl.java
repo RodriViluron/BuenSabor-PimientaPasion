@@ -94,9 +94,9 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido,Long> implements P
     @Transactional
     public List<PedidoPedidosDeliveryDTO> buscarPedidoPorEstado(EstadoPedido pedido_estado) throws Exception {
         try{
-            List<Pedido>pedidos=pedidoRepository.buscarPedidoPorEstado(pedido_estado);
-            ModelMapper modelMapper=new ModelMapper();
-            List<PedidoPedidosDeliveryDTO> pedidoPedidosDeliveryDTOS=new ArrayList<PedidoPedidosDeliveryDTO>();
+            List<Pedido> pedidos=pedidoRepository.buscarPedidoPorEstado(pedido_estado);
+            ModelMapper modelMapper = new ModelMapper();
+            List<PedidoPedidosDeliveryDTO> pedidoPedidosDeliveryDTOS =new ArrayList<PedidoPedidosDeliveryDTO>();
             for (Pedido pedido:pedidos){
                 PedidoPedidosDeliveryDTO pedidoPedidosDeliveryDTO=modelMapper.map(pedido,PedidoPedidosDeliveryDTO.class);
                 pedidoPedidosDeliveryDTO.setClientePedidosDeliveyDTO(modelMapper.map(pedido.getCliente(), ClientePedidosDeliveyDTO.class));

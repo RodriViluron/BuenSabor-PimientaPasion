@@ -10,15 +10,9 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClienteRankingDTO  implements Comparable {
-    private int cantidadPedidos;
-    private long clienteId;
+public class ClienteRankingDTO {
     private String nombre;
     private String apellido;
+    private int cantidadPedidos;
     private double totalPrecioPedidos;
-
-    @Override
-    public int compareTo(Object o) {
-        return 0;
-    }
 }

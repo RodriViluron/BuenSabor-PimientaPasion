@@ -22,6 +22,4 @@ public interface ProductoRepository extends BaseRepository<Producto, Long> {
     List<Producto> buscarDisponibles ();
 
 
-
-
 }

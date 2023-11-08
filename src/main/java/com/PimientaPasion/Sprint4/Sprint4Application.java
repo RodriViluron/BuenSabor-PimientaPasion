@@ -50,27 +50,26 @@ public class Sprint4Application {
             //				Rehacerlo mas bonito
             //-----------------------------------------------
 
-            //Le doy formato a Date
             SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
             String fecha1 = "2023-09-10";
             String fecha2 = "2023-08-15";
             String fecha3 = "2023-07-03";
 
-            //Parseo String en un objeto Date
+            // Parseo String en un objeto Date
             Date fechaUno = formatoFecha.parse(fecha1);
             Date fechaDos = formatoFecha.parse(fecha2);
             Date fechaTres = formatoFecha.parse(fecha3);
 
-            //Formato Date para horaEstimadaFinalizacion
+            // Formato Date para horaEstimadaFinalizacion
             SimpleDateFormat formatoHorario = new SimpleDateFormat("HH:mm:ss");
             String horario1 = "21:42:05";
             String horario2 = "23:00:58";
             String horario3 = "23:28:32";
 
-            //Parseo String en un objeto Date
-            Date horarioUno = formatoFecha.parse(fecha1);
-            Date horarioDos = formatoFecha.parse(fecha2);
-            Date horarioTres = formatoFecha.parse(fecha3);
+            // Parseo String en un objeto Date
+            Date horarioUno = formatoHorario.parse(horario1);
+            Date horarioDos = formatoHorario.parse(horario2);
+            Date horarioTres = formatoHorario.parse(horario3);
 
             // Crear Usuario
             Usuario usuario1 = Usuario.builder()
