@@ -40,7 +40,7 @@ public interface ClienteRepository extends BaseRepository<Cliente, Long> {
             value="select c from Cliente c where c.usuario.username = :filtro1 and c.usuario.contraseña = :filtro2")
     Cliente singInCliente (@Param("filtro1") String filtro1,@Param("filtro2") String filtro2);
 
-<<<<<<< HEAD
+
     // HU #26 query searchMejoresClientes
     @Query("SELECT c.nombre, c.apellido, COUNT(p.cliente.id) AS cantidadPedidos, SUM(p.totalPedido) AS totalCompras " +
                     "FROM Cliente c JOIN Pedido p ON c.id = p.cliente.id " +
@@ -66,7 +66,7 @@ public interface ClienteRepository extends BaseRepository<Cliente, Long> {
                          @Param("departamento") String departamento, @Param("telefono") String telefono,
                          @Param("email") String email, @Param("contrasena") String contrasena);
 */
-=======
+
     //HU #7
     //Eliminar Cliente
     @Modifying
@@ -84,5 +84,5 @@ public interface ClienteRepository extends BaseRepository<Cliente, Long> {
             @Param("nuevoEmail") String nuevoEmail
     );
 
->>>>>>> origin/main
+
 }
