@@ -36,11 +36,11 @@ public interface ClienteRepository extends BaseRepository<Cliente, Long> {
     )
     Page<Cliente> searchNativo(@Param("filtro") String filtro, Pageable pageable);
 
+
     //HU #02 Query de inicio de sesion cliente
     @Query(
-            value="select c from Cliente c where c.usuario.username = :filtro1 and c.usuario.contraseña = :filtro2")
+            value="select c from Cliente c where c.usuario.username = :filtro1 and c.usuario.password = :filtro2")
     Cliente singInCliente (@Param("filtro1") String filtro1,@Param("filtro2") String filtro2);
-
 
     // HU #26 query searchMejoresClientes
     @Query("SELECT c.nombre, c.apellido, COUNT(p.cliente.id) AS cantidadPedidos, SUM(p.totalPedido) AS totalCompras " +

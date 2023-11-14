@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "36c32a8d-a62e-4ef3-8b00-d893f956f746",
-		"name": "Sprint4PimientaPasion",
+		"_postman_id": "56115488-75bd-4e99-9ff5-7fa52a4d130d",
+		"name": "Sprint4PimientaPasion Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "29639444",
-		"_collection_link": "https://blue-star-756672.postman.co/workspace/Pimienta-Pasion~853c55d4-6a14-4a56-ae79-e4613103a5be/collection/29639444-36c32a8d-a62e-4ef3-8b00-d893f956f746?action=share&source=collection_link&creator=29639444"
+		"_exporter_id": "30236936"
 	},
 	"item": [
 		{
@@ -119,7 +118,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\r\n    \"nombre\": \"Rodrigo\",\r\n    \"apellido\": \"Viluron\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"rodrigo@gmail.com\"\r\n}"
+							"raw": "{\r\n\r\n    \"nombre\": \"Andres\",\r\n    \"apellido\": \"Novello\",\r\n    \"telefono\": \"123456989\",\r\n    \"email\": \"andres@gmail.com\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/v1/clientes",
@@ -308,10 +307,15 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"José\",\r\n    \"apellido\": \"Rodriguez\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"jose@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/clientes/modificarCliente?clienteId=3&nuevoNombre=Luis&nuevoApellido=Sanchez&nuevoTelefono=456789123&nuevoEmail=luis@gmail.com",
+							"raw": "http://localhost:8080/api/v1/clientes/modificarCliente",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -322,28 +326,6 @@
 								"v1",
 								"clientes",
 								"modificarCliente"
-							],
-							"query": [
-								{
-									"key": "clienteId",
-									"value": "3"
-								},
-								{
-									"key": "nuevoNombre",
-									"value": "Luis"
-								},
-								{
-									"key": "nuevoApellido",
-									"value": "Sanchez"
-								},
-								{
-									"key": "nuevoTelefono",
-									"value": "456789123"
-								},
-								{
-									"key": "nuevoEmail",
-									"value": "luis@gmail.com"
-								}
 							]
 						}
 					},
@@ -355,7 +337,7 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/clientes/eliminarCliente?clienteId=3",
+							"raw": "http://localhost:8080/api/v1/clientes/eliminarCliente?clienteId=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -370,7 +352,7 @@
 							"query": [
 								{
 									"key": "clienteId",
-									"value": "3"
+									"value": "1"
 								}
 							]
 						}
@@ -409,7 +391,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/clientes/2",
+							"raw": "http://localhost:8080/api/v1/pedidos/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -418,7 +400,7 @@
 							"path": [
 								"api",
 								"v1",
-								"clientes",
+								"pedidos",
 								"2"
 							]
 						}
@@ -494,7 +476,7 @@
 							"raw": "{\r\n\r\n    \"nombre\": \"Rodrigo\",\r\n    \"apellido\": \"Viluron\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"rodrigo@gmail.com\"\r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/clientes",
+							"raw": "http://localhost:8080/api/v1/pedidos",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -503,7 +485,7 @@
 							"path": [
 								"api",
 								"v1",
-								"clientes"
+								"pedidos"
 							]
 						}
 					},
@@ -889,6 +871,65 @@
 									"key": "filtro2",
 									"value": "tomas"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarEmpleado",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/empleados/eliminarEmpleado?empleadoId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"empleados",
+								"eliminarEmpleado"
+							],
+							"query": [
+								{
+									"key": "empleadoId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modificarEmpleado",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"José\",\r\n    \"apellido\": \"Rodriguez\",\r\n    \"telefono\": \"123456789\",\r\n    \"email\": \"jose@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/empleados/modificarEmpleado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"empleados",
+								"modificarEmpleado"
 							]
 						}
 					},
@@ -1358,6 +1399,50 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "buscarIngredientesDisponibles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ingredientes/buscarIngredientesDisponibles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ingredientes",
+								"buscarIngredientesDisponibles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "controlStockIngredientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/ingredientes/controlStockIngredientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"ingredientes",
+								"controlStockIngredientes"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -1476,7 +1561,7 @@
 							"raw": "{\r\n        \"denominacion\": \"Cebolla\",\r\n        \"fechaHoraAlta\": \"\",\r\n        \"fechaHoraBaja\": \"\",\r\n        \"fechaHoraModificacion\": \"\",\r\n        \"precioCompra\": 1300.00,\r\n        \"stockActual\": 90,\r\n        \"stockMinimo\": 75.00,\r\n        \"urlImagen\": \"\"\r\n        \r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/\"id\": 3,\n    \"denominacion\": \"Bebidas\",\n    \"eliminado\": false,\n    \"rubroPadre\": null,/3",
+							"raw": "http://localhost:8080/api/v1/rubroProductos",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1485,8 +1570,7 @@
 							"path": [
 								"api",
 								"v1",
-								"\"id\": 3,\n    \"denominacion\": \"Bebidas\",\n    \"eliminado\": false,\n    \"rubroPadre\": null,",
-								"3"
+								"rubroProductos"
 							]
 						}
 					},
@@ -1632,7 +1716,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/articuloManufacturados/2",
+							"raw": "http://localhost:8080/api/v1/productos/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1641,7 +1725,7 @@
 							"path": [
 								"api",
 								"v1",
-								"articuloManufacturados",
+								"productos",
 								"2"
 							]
 						}
@@ -1664,7 +1748,7 @@
 							"raw": "{\r\n        \"nombre\": \"Lucas\",\r\n        \"apellido\": \"Martinez\",\r\n        \"dni\": 43635876,\r\n        \"domicilio\": {\r\n            \"calle\": \"Catamarca\",\r\n            \"numero\": 144,\r\n            \"localidad\": {\r\n                \"id\": 1,\r\n                \"denominacion\": \"Lujan\"\r\n            }\r\n        },\r\n        \"libros\": [\r\n            {\r\n                \"titulo\": \"los dias del venado\",\r\n                \"fecha\": 2012,\r\n                \"genero\": \"fantastico\",\r\n                \"paginas\": 329,\r\n                \"autores\": [\r\n                    {\r\n                        \"id\": 1,\r\n                        \"nombre\": \"Liliana\",\r\n                        \"apellido\": \"Bodoc\",\r\n                        \"biografia\": \"Liliana Chiavetta, mejor conocida como Liliana Bodoc (Santa Fe, 21de julio de 1958-Mendoza, 6 de febrero de 2018),1​ fue una escritora y poeta argentina que se especializó en literatura juvenil e adulta. Con su trilogía La saga de los confines se mostró como la revelación argentina en el género de la épica y la literatura fantástica; y sus libros fueron traducidos al alemán, francés, neerlandés, japonés, polaco, inglés e italiano\"\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/articuloManufacturados",
+							"raw": "http://localhost:8080/api/v1/productos",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1673,7 +1757,7 @@
 							"path": [
 								"api",
 								"v1",
-								"articuloManufacturados"
+								"productos"
 							]
 						}
 					},
@@ -2046,7 +2130,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/facturas/totalIngresos?fechaInicio=2023-08-10&fechaFin=2023-10-10",
+							"raw": "http://localhost:8080/api/v1/facturas/totalIngresos?fechaInicio=2023-10-10&fechaFin=2024-12-10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2061,11 +2145,11 @@
 							"query": [
 								{
 									"key": "fechaInicio",
-									"value": "2023-08-10"
+									"value": "2023-10-10"
 								},
 								{
 									"key": "fechaFin",
-									"value": "2023-10-10"
+									"value": "2024-12-10"
 								}
 							]
 						}

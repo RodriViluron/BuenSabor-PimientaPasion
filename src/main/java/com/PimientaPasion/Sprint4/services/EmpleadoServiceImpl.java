@@ -70,18 +70,43 @@ public class EmpleadoServiceImpl extends BaseServiceImpl<Empleado,Long> implemen
     }
 
     @Override
+    @Transactional
     public Empleado modificarEmpleado(Long empleadoId, String nuevoNombre, String nuevoApellido, String nuevoTelefono, String nuevoEmail) throws Exception {
         try {
             if (empleadoId != null) {
-                // Llama al método de repositorio para modificar al empleado por su ID
-                empleadoRepository.modificarEmpleado(empleadoId, nuevoNombre, nuevoApellido, nuevoTelefono, nuevoEmail);
-                // Aquí puedes devolver el empleado actualizado si lo deseas
-                return empleadoRepository.findById(empleadoId).orElse(null);
+                // Obtener el cliente actual
+                Empleado empleado = empleadoRepository.findById(empleadoId).orElse(null);
+
+                // Verificar si el cliente existe
+                if (empleado != null) {
+                    // Actualizar solo los campos que no son nulos
+                    if (nuevoNombre != null) {
+                        empleado.setNombre(nuevoNombre);
+                    }
+                    if (nuevoApellido != null) {
+                        empleado.setApellido(nuevoApellido);
+                    }
+                    if (nuevoTelefono != null) {
+                        empleado.setTelefono(nuevoTelefono);
+                    }
+                    if (nuevoEmail != null) {
+                        empleado.setEmail(nuevoEmail);
+                    }
+
+                    // Guardar los cambios en el repositorio
+                    empleadoRepository.save(empleado);
+
+                    return empleado;
+                } else {
+                    // Empleado no encontrado
+                    return null;
+                }
             } else {
+                // ID de empleado nulo
                 return null;
             }
         } catch (Exception e) {
-            throw new Exception(e.getMessage());
+            throw new Exception("Error al modificar el empleado: " + e.getMessage());
         }
     }
 }

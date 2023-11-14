@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface RubroIngredienteRepository extends BaseRepository<RubroIngrediente, Long> {
-
+/*
     @Query("SELECT ri.denominacion, ri.eliminado " +
                     "FROM RubroIngrediente ri " +
                     "WHERE ri.eliminado=null"
@@ -23,9 +23,8 @@ public interface RubroIngredienteRepository extends BaseRepository<RubroIngredie
     )
     RubroIngrediente searchRubroIngredienteById(@RequestParam Long idRubroIngrediente);
 
-    @Query("INSERT INTO RubroIngrediente ri (denominacion, eliminado) VALUE (:denominacion, false)")
-    RubroIngrediente saveRubroIngrediente(@RequestParam(name = "denominacion") String denominacion);
-
     @Query("UPDATE RubroProducto set denominacion = :denominacion WHERE id = :idRubroIngrediente")
     void modificarRubroProducto(@RequestParam(name = "denominacion") String denominacion, @RequestParam(name = "idRubroIngrediente") Long idRubroIngrediente );
+*/
 }
+

@@ -1,12 +1,12 @@
 package com.PimientaPasion.Sprint4.repositories;
 
-import com.PimientaPasion.Sprint4.entities.Ingrediente;
 import com.PimientaPasion.Sprint4.entities.Usuario;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import java.util.Optional;
 
 import java.util.List;
 
@@ -30,7 +30,7 @@ public interface UsuarioRepository extends BaseRepository<Usuario, Long> {
     )
     Page<Usuario> searchNativo(@Param("filtro") String filtro, Pageable pageable);
 
-
+    Optional<Usuario> findByUsername(String username);
 
 
 }

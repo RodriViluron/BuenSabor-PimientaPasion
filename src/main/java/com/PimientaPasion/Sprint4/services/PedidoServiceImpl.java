@@ -1,7 +1,7 @@
 package com.PimientaPasion.Sprint4.services;
 
 import com.PimientaPasion.Sprint4.DTOs.VerPedidosClientedtos.*;
-import com.PimientaPasion.Sprint4.VerPedidosClientedtos.*;
+
 import com.PimientaPasion.Sprint4.DTOs.VerPedidosDeliverydtos.ClientePedidosDeliveyDTO;
 import com.PimientaPasion.Sprint4.DTOs.VerPedidosDeliverydtos.DireccionPedidosDeliveryDTO;
 import com.PimientaPasion.Sprint4.DTOs.VerPedidosDeliverydtos.PedidoPedidosDeliveryDTO;

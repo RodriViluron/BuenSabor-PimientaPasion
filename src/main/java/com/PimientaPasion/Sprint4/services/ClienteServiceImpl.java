@@ -74,20 +74,42 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente, Long> implement
         }
     }
 
-    @Override
-    @Transactional
     public Cliente modificarCliente(Long clienteId, String nuevoNombre, String nuevoApellido, String nuevoTelefono, String nuevoEmail) throws Exception {
         try {
             if (clienteId != null) {
-                // Llama al método de repositorio para modificar el cliente por su ID
-                Cliente cliente = clienteRepository.modificarCliente(clienteId, nuevoNombre, nuevoApellido, nuevoTelefono, nuevoEmail);
-                return cliente;
+                // Obtener el cliente actual
+                Cliente cliente = clienteRepository.findById(clienteId).orElse(null);
+
+                // Verificar si el cliente existe
+                if (cliente != null) {
+                    // Actualizar solo los campos que no son nulos
+                    if (nuevoNombre != null) {
+                        cliente.setNombre(nuevoNombre);
+                    }
+                    if (nuevoApellido != null) {
+                        cliente.setApellido(nuevoApellido);
+                    }
+                    if (nuevoTelefono != null) {
+                        cliente.setTelefono(nuevoTelefono);
+                    }
+                    if (nuevoEmail != null) {
+                        cliente.setEmail(nuevoEmail);
+                    }
+
+                    // Guardar los cambios en el repositorio
+                    clienteRepository.save(cliente);
+
+                    return cliente;
+                } else {
+                    // Cliente no encontrado
+                    return null;
+                }
             } else {
+                // ID de cliente nulo
                 return null;
             }
-
         } catch (Exception e) {
-            throw new Exception(e.getMessage());
+            throw new Exception("Error al modificar el cliente: " + e.getMessage());
         }
     }
 

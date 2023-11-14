@@ -1,5 +1,6 @@
 package com.PimientaPasion.Sprint4.controllers;
 
+import com.PimientaPasion.Sprint4.entities.Cliente;
 import com.PimientaPasion.Sprint4.entities.Empleado;
 import com.PimientaPasion.Sprint4.services.EmpleadoServiceImpl;
 import org.springframework.data.domain.Pageable;
@@ -48,23 +49,24 @@ public class EmpleadoController extends BaseControllerImpl<Empleado, EmpleadoSer
         }
     }
 
-    @PutMapping ("/modificarEmpleado")
-    public ResponseEntity<?> modificarEmpleado(
-            @RequestParam Long empleadoId,
-            @RequestParam String nuevoNombre,
-            @RequestParam String nuevoApellido,
-            @RequestParam String nuevoTelefono,
-            @RequestParam String nuevoEmail
-    ) {
+    @PutMapping("/modificarEmpleado")
+    public ResponseEntity<?> modificarEmpleado(@RequestBody Empleado empleadoRequest) {
         try {
-            Empleado empleadoModificado = servicio.modificarEmpleado(empleadoId, nuevoNombre, nuevoApellido, nuevoTelefono, nuevoEmail);
+            Empleado empleadoModificado = servicio.modificarEmpleado(
+                    empleadoRequest.getId(),
+                    empleadoRequest.getNombre(),
+                    empleadoRequest.getApellido(),
+                    empleadoRequest.getTelefono(),
+                    empleadoRequest.getEmail()
+            );
+
             if (empleadoModificado != null) {
                 return ResponseEntity.status(HttpStatus.OK).body(empleadoModificado);
             } else {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Cliente no encontrado\"}");
             }
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error al modificar el cliente\"}");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\":\"Error al modificar el cliente\"}");
         }
     }
 

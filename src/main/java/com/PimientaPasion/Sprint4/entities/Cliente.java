@@ -10,8 +10,6 @@ import java.util.List;
 @Table(name = "cliente")
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
 @Builder
 @Data
 public class Cliente extends Base {

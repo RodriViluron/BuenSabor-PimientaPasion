@@ -75,7 +75,7 @@ public class Sprint4Application {
             Usuario usuario1 = Usuario.builder()
                     .auth0Id("1")
                     .username("rodri@gmail.com")
-                    .contraseña("rodri")
+                    .password("rodri")
                     .rol(Rol.CLIENTE)
                     .build();
 
@@ -83,42 +83,42 @@ public class Sprint4Application {
             Usuario usuario2 = Usuario.builder()
                     .auth0Id("2")
                     .username("roberto@gmail.com")
-                    .contraseña("roberto")
+                    .password("roberto")
                     .rol(Rol.CLIENTE)
                     .build();
 
             Usuario usuario3 = Usuario.builder()
                     .auth0Id("3")
                     .username("joaquine@gmail.com")
-                    .contraseña("joaquin")
+                    .password("joaquin")
                     .rol(Rol.ADMINISTRADOR)
                     .build();
 
             Usuario usuario4 = Usuario.builder()
                     .auth0Id("4")
                     .username("tomas@gmail.com")
-                    .contraseña("tomas")
+                    .password("tomas")
                     .rol(Rol.CAJERO)
                     .build();
 
             Usuario usuario5 = Usuario.builder()
                     .auth0Id("5")
                     .username("german@gmail.com")
-                    .contraseña("german")
+                    .password("german")
                     .rol(Rol.COCINERO)
                     .build();
 
             Usuario usuario6 = Usuario.builder()
                     .auth0Id("6")
                     .username("lautaro@gmail.com")
-                    .contraseña("lautaro")
+                    .password("lautaro")
                     .rol(Rol.DELIVERY)
                     .build();
 
             Usuario usuario7 = Usuario.builder()
                     .auth0Id("7")
                     .username("leandro@gmail.com")
-                    .contraseña("leandro")
+                    .password("leandro")
                     .rol(Rol.COCINERO)
                     .build();
 
