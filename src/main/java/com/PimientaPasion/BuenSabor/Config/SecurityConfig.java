@@ -41,15 +41,31 @@ public class SecurityConfig {
                                 .requestMatchers(PathRequest.toH2Console()).permitAll()
 
                                 //Autorizacion de acceso a la url
-                                .requestMatchers(new AntPathRequestMatcher("/api/v1/usuarios/**")).hasAnyAuthority("CLIENTE")
-                                .requestMatchers(new AntPathRequestMatcher("/api/v1/clientes/**")).hasAnyAuthority("CLIENTE")
-                                .requestMatchers(new AntPathRequestMatcher("/api/v1/empleados/**")).hasAnyAuthority("CLIENTE")
-                                .requestMatchers(new AntPathRequestMatcher("/api/v1/domicilios/**")).hasAnyAuthority(Rol.CLIENTE.name())
-                                .requestMatchers(new AntPathRequestMatcher("/api/v1/facturas/**")).hasAnyAuthority(Rol.CLIENTE.name())
-                                .requestMatchers(new AntPathRequestMatcher("/api/v1/pedidos/**")).hasAnyAuthority(Rol.CLIENTE.name())
-                                .requestMatchers(new AntPathRequestMatcher("/api/v1/ingredientes/**")).hasAnyAuthority(Rol.CLIENTE.name())
-                                .requestMatchers(new AntPathRequestMatcher("/api/v1/productos/**")).hasAnyAuthority(Rol.CLIENTE.name())
-                                .requestMatchers(new AntPathRequestMatcher("/api/v1/rubroProductos/**")).hasAnyAuthority(Rol.CLIENTE.name())
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/usuarios/**")).hasAnyAuthority("ADMINISTRADOR")
+
+
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/clientes/modificarCliente")).hasAnyAuthority("CLIENTE")
+
+
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/empleados/modificarEmpleado")).hasAnyAuthority("DELIVERY","CAJERO","COCINERO")
+
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/domicilios/**")).hasAnyAuthority("ADMINISTRADOR")
+
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/facturas/**")).hasAnyAuthority("ADMINISTRADOR")
+
+
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/pedidos/buscarPedidosCliente")).hasAnyAuthority("CLIENTE")
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/pedidos/verDetallePedido")).hasAnyAuthority("CLIENTE")
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/pedidos/verFacturaPedido")).hasAnyAuthority("CLIENTE")
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/pedidos/buscarPedidoPorEstado")).hasAnyAuthority("DELIVERY","CAJERO","COCINERO")
+
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/ingredientes/**")).hasAnyAuthority("ADMINISTRADOR","COCINERO")
+
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/productos/buscarPorDenominacion")).hasAnyAuthority("CLIENTE")
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/productos/buscarPorDenominacionPage")).hasAnyAuthority("CLIENTE")
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/productos/buscarDisponibles")).hasAnyAuthority("CLIENTE")
+
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/rubroProductos/buscarRubrosProdDisponibles")).hasAnyAuthority("CLIENTE")
 
 
 
