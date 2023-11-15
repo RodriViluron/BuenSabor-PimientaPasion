@@ -55,6 +55,6 @@ tasks.named('test') {
 }
 jar {
 	manifest {
-		attributes 'Sprint4Application': 'com.PimientaPasion.Sprint4.Sprint4Application' // Reemplaza 'tu.paquete.MainClass' con la clase principal de tu aplicación
+		attributes 'Sprint4Application': 'com.PimientaPasion.BuenSabor.Sprint4Application' // Reemplaza 'tu.paquete.MainClass' con la clase principal de tu aplicación
 	}
 }
