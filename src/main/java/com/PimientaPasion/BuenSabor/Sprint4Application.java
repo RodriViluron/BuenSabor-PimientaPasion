@@ -71,11 +71,11 @@ public class Sprint4Application {
             Date horarioDos = formatoHorario.parse(horario2);
             Date horarioTres = formatoHorario.parse(horario3);
 
-            // Crear Usuario
+            // Crear Usuario todos los usuario tienen contraseña 1234
             Usuario usuario1 = Usuario.builder()
                     //.auth0Id("1")
                     .username("rodri@gmail.com")
-                    .password("rodri")
+                    .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
                     .rol(Rol.CLIENTE)
                     .build();
 
@@ -83,42 +83,42 @@ public class Sprint4Application {
             Usuario usuario2 = Usuario.builder()
                     //.auth0Id("2")
                     .username("roberto@gmail.com")
-                    .password("roberto")
+                    .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
                     .rol(Rol.CLIENTE)
                     .build();
 
             Usuario usuario3 = Usuario.builder()
                     //.auth0Id("3")
                     .username("joaquine@gmail.com")
-                    .password("joaquin")
+                    .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
                     .rol(Rol.ADMINISTRADOR)
                     .build();
 
             Usuario usuario4 = Usuario.builder()
                     //.auth0Id("4")
                     .username("tomas@gmail.com")
-                    .password("tomas")
+                    .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
                     .rol(Rol.CAJERO)
                     .build();
 
             Usuario usuario5 = Usuario.builder()
                     //.auth0Id("5")
                     .username("german@gmail.com")
-                    .password("german")
+                    .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
                     .rol(Rol.COCINERO)
                     .build();
 
             Usuario usuario6 = Usuario.builder()
                     //.auth0Id("6")
                     .username("lautaro@gmail.com")
-                    .password("lautaro")
+                    .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
                     .rol(Rol.DELIVERY)
                     .build();
 
             Usuario usuario7 = Usuario.builder()
                     //.auth0Id("7")
                     .username("leandro@gmail.com")
-                    .password("leandro")
+                    .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
                     .rol(Rol.COCINERO)
                     .build();
 

@@ -15,7 +15,8 @@ import java.util.Date;
 public class FacturaController extends BaseControllerImpl<Factura, FacturaServiceImpl>{
 
     @GetMapping("/totalIngresos")
-    public ResponseEntity<?> totalIngresos(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaInicio, @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaFin) {
+    public ResponseEntity<?> totalIngresos(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaInicio,
+                                           @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaFin) {
         try {
             Double totalIngresos = servicio.totalIngresos(fechaInicio, fechaFin);
             Double totalCostos = servicio.totalCostos(fechaInicio, fechaFin);

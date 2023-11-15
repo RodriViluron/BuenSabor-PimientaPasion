@@ -123,7 +123,7 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente, Long> implement
             for (Object[] result : results) {
                 String nombre = (String) result[0];
                 String apellido = (String) result[1];
-                int cantidadPedidos = (int) result[2];
+                Long cantidadPedidos = (Long) result[2];
                 double totalPrecioPedidos = (double) result[3];
 
                 ClienteRankingDTO dto = new ClienteRankingDTO(nombre, apellido, cantidadPedidos, totalPrecioPedidos);
@@ -132,8 +132,11 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente, Long> implement
             return rankingDTOs;
 
         } catch (Exception e) {
+            e.printStackTrace();
             throw new Exception(e.getMessage());
         }
     }
+
+
 
 }

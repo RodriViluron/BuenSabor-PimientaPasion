@@ -41,7 +41,7 @@ public class AuthService {
 
                 .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .rol(Rol.CLIENTE)
+                .rol(Rol.ADMINISTRADOR)
                 .build();
 
         // Crear el Cliente y asociarlo al Usuario

@@ -47,7 +47,8 @@ public interface ClienteRepository extends BaseRepository<Cliente, Long> {
             "ORDER BY COUNT(p.cliente) DESC"
 
     )
-    List<Object[]> searchMejoresClientes(@Param("fechaInicio") Date fechaInicio, @Param("fechaFin") Date fechaFin);
+    List<Object[]> searchMejoresClientes(@Param("fechaInicio") Date fechaInicio,
+                                         @Param("fechaFin") Date fechaFin);
 
 /*
     //HU #01

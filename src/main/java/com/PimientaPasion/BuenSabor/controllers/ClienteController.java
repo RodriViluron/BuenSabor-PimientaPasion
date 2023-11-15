@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.format.DateTimeParseException;
 import java.util.Date;
 import java.util.List;
 
@@ -78,15 +79,17 @@ public class ClienteController extends BaseControllerImpl<Cliente, ClienteServic
     }
 
 
-
-
     @GetMapping("/searchMejoresClientes")
     public ResponseEntity<?> searchMejoresClientes(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaInicio,
                                                    @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaFin) {
         try {
             List<ClienteRankingDTO> clientesRanking = servicio.searchMejoresClientes(fechaInicio, fechaFin);
             return ResponseEntity.status(HttpStatus.OK).body(clientesRanking);
+
+        } catch (DateTimeParseException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\":\"Invalid date format. Use yyyy-MM-dd\"}");
         } catch (Exception e) {
+            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error no existen pedidos en ese rango\"}");
         }
     }

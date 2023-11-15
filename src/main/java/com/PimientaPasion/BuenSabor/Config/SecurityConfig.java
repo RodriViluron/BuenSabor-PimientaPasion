@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.config.annotation.web.WebSecurityConfigurer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
@@ -43,16 +44,13 @@ public class SecurityConfig {
                                 //Autorizacion de acceso a la url
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/usuarios/**")).hasAnyAuthority("ADMINISTRADOR")
 
-
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/clientes/modificarCliente")).hasAnyAuthority("CLIENTE")
-
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/empleados/modificarEmpleado")).hasAnyAuthority("DELIVERY","CAJERO","COCINERO")
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/domicilios/**")).hasAnyAuthority("ADMINISTRADOR")
 
-                                .requestMatchers(new AntPathRequestMatcher("/api/v1/facturas/**")).hasAnyAuthority("ADMINISTRADOR")
-
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/clientes/**")).hasAnyAuthority("ADMINISTRADOR")
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/pedidos/buscarPedidosCliente")).hasAnyAuthority("CLIENTE")
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/pedidos/verDetallePedido")).hasAnyAuthority("CLIENTE")
@@ -66,7 +64,6 @@ public class SecurityConfig {
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/productos/buscarDisponibles")).hasAnyAuthority("CLIENTE")
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/rubroProductos/buscarRubrosProdDisponibles")).hasAnyAuthority("CLIENTE")
-
 
 
 

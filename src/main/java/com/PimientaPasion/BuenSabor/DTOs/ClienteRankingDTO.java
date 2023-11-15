@@ -11,7 +11,7 @@ import lombok.*;
 public class ClienteRankingDTO {
     private String nombre;
     private String apellido;
-    private int cantidadPedidos;
+    private Long cantidadPedidos;
     private double totalPrecioPedidos;
 
 }
