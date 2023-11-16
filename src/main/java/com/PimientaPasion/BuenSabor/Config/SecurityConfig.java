@@ -2,13 +2,11 @@ package com.PimientaPasion.BuenSabor.Config;
 
 
 import com.PimientaPasion.BuenSabor.JWT.JwtAuthenticationFilter;
-import com.PimientaPasion.BuenSabor.enums.Rol;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.config.annotation.web.WebSecurityConfigurer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
@@ -48,6 +46,12 @@ public class SecurityConfig {
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/empleados/modificarEmpleado")).hasAnyAuthority("DELIVERY","CAJERO","COCINERO")
 
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/empleados/**")).permitAll()
+
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/productos/**")).permitAll()
+
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/clientes/**")).permitAll()
+
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/domicilios/**")).hasAnyAuthority("ADMINISTRADOR")
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/clientes/**")).hasAnyAuthority("ADMINISTRADOR")
@@ -65,8 +69,6 @@ public class SecurityConfig {
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/rubroProductos/buscarRubrosProdDisponibles")).hasAnyAuthority("CLIENTE")
 
-
-
                 )
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable)) //H2
                 .sessionManagement(sessionManager->
@@ -76,6 +78,7 @@ public class SecurityConfig {
                 .authenticationProvider(authProvider)
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
+
 
 
     }

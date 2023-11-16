@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @SpringBootApplication
-public class Sprint4Application {
+public class BuenSaborApplication {
 
     @Autowired
     UnidadMedidaRepository unidadMedidaRepository;
@@ -34,7 +34,7 @@ public class Sprint4Application {
     ConfiguracionRepository configuracionRepository;
 
     public static void main(String[] args) {
-        SpringApplication.run(Sprint4Application.class, args);
+        SpringApplication.run(BuenSaborApplication.class, args);
         System.out.println("Estoy funcionando");
     }
 
