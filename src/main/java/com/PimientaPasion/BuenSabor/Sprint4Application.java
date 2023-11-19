@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @SpringBootApplication
-public class BuenSaborApplication {
+public class Sprint4Application {
 
     @Autowired
     UnidadMedidaRepository unidadMedidaRepository;
@@ -34,7 +34,7 @@ public class BuenSaborApplication {
     ConfiguracionRepository configuracionRepository;
 
     public static void main(String[] args) {
-        SpringApplication.run(BuenSaborApplication.class, args);
+        SpringApplication.run(Sprint4Application.class, args);
         System.out.println("Estoy funcionando");
     }
 
@@ -89,7 +89,7 @@ public class BuenSaborApplication {
 
             Usuario usuario3 = Usuario.builder()
                     //.auth0Id("3")
-                    .username("joaquine@gmail.com")
+                    .username("admin")
                     .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
                     .rol(Rol.ADMINISTRADOR)
                     .build();

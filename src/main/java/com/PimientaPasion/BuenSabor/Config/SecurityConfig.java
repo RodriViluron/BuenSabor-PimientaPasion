@@ -2,11 +2,13 @@ package com.PimientaPasion.BuenSabor.Config;
 
 
 import com.PimientaPasion.BuenSabor.JWT.JwtAuthenticationFilter;
+import com.PimientaPasion.BuenSabor.enums.Rol;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.config.annotation.web.WebSecurityConfigurer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
@@ -40,19 +42,25 @@ public class SecurityConfig {
                                 .requestMatchers(PathRequest.toH2Console()).permitAll()
 
                                 //Autorizacion de acceso a la url
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/**")).permitAll()
+                                /*
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/usuarios/**")).hasAnyAuthority("ADMINISTRADOR")
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/clientes/modificarCliente")).hasAnyAuthority("CLIENTE")
 
-                                .requestMatchers(new AntPathRequestMatcher("/api/v1/empleados/modificarEmpleado")).hasAnyAuthority("DELIVERY","CAJERO","COCINERO")
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/empleados/modificarEmpleado")).hasAnyAuthority("ADMINISTRADOR")
 
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/empleados/modificarEmpleado")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/empleados/**")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/api/v1/empleados")).hasAnyAuthority("ADMINISTRADOR")
+
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/productos/**")).permitAll()
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/clientes/**")).permitAll()
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/domicilios/**")).hasAnyAuthority("ADMINISTRADOR")
+
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/clientes/**")).hasAnyAuthority("ADMINISTRADOR")
 
@@ -68,6 +76,8 @@ public class SecurityConfig {
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/productos/buscarDisponibles")).hasAnyAuthority("CLIENTE")
 
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/rubroProductos/buscarRubrosProdDisponibles")).hasAnyAuthority("CLIENTE")
+                                */
+
 
                 )
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable)) //H2
