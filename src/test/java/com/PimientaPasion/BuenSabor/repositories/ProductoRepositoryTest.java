@@ -34,7 +34,7 @@ class ProductoRepositoryTest {
         entityManager.persist(producto);
         entityManager.flush();
 
-        assertEquals(productos,productoRepository.buscarPorDenominacion("Hamburgesa"));
+        assertEquals(productos,productoRepository.searchByDenominacion("Hamburgesa"));
     }
 
     @Test
@@ -52,7 +52,7 @@ class ProductoRepositoryTest {
 
 
 
-        assertEquals(productosPage,productoRepository.buscarPorDenominacion("Hamburgesa",PageRequest.of(0,5)));
+        assertEquals(productosPage,productoRepository.searchByDenominacion("Hamburgesa",PageRequest.of(0,5)));
     }
     /*
     @Test

@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @SpringBootApplication
-public class Sprint4Application {
+public class BuenSaborApplication {
 
     @Autowired
     UnidadMedidaRepository unidadMedidaRepository;
@@ -34,7 +34,7 @@ public class Sprint4Application {
     ConfiguracionRepository configuracionRepository;
 
     public static void main(String[] args) {
-        SpringApplication.run(Sprint4Application.class, args);
+        SpringApplication.run(BuenSaborApplication.class, args);
         System.out.println("Estoy funcionando");
     }
 
@@ -74,7 +74,7 @@ public class Sprint4Application {
             // Crear Usuario todos los usuario tienen contraseña 1234
             Usuario usuario1 = Usuario.builder()
                     //.auth0Id("1")
-                    .username("rodri@gmail.com")
+                    .username("user1")
                     .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
                     .rol(Rol.CLIENTE)
                     .build();
@@ -82,7 +82,7 @@ public class Sprint4Application {
 
             Usuario usuario2 = Usuario.builder()
                     //.auth0Id("2")
-                    .username("roberto@gmail.com")
+                    .username("user2")
                     .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
                     .rol(Rol.CLIENTE)
                     .build();
@@ -96,28 +96,28 @@ public class Sprint4Application {
 
             Usuario usuario4 = Usuario.builder()
                     //.auth0Id("4")
-                    .username("tomas@gmail.com")
+                    .username("cajero")
                     .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
                     .rol(Rol.CAJERO)
                     .build();
 
             Usuario usuario5 = Usuario.builder()
                     //.auth0Id("5")
-                    .username("german@gmail.com")
+                    .username("cocinero1")
                     .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
                     .rol(Rol.COCINERO)
                     .build();
 
             Usuario usuario6 = Usuario.builder()
                     //.auth0Id("6")
-                    .username("lautaro@gmail.com")
+                    .username("delivery")
                     .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
                     .rol(Rol.DELIVERY)
                     .build();
 
             Usuario usuario7 = Usuario.builder()
                     //.auth0Id("7")
-                    .username("leandro@gmail.com")
+                    .username("cocinero2")
                     .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
                     .rol(Rol.COCINERO)
                     .build();

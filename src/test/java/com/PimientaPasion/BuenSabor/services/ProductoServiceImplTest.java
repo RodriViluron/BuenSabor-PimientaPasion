@@ -23,7 +23,7 @@ class ProductoServiceImplTest {
     private ProductoServiceImpl productoService;
 
     @Test
-    void buscarPorDenominacion() throws Exception{
+    void searchByDenominacion() throws Exception{
         Producto producto=Producto.builder()
                 .denominacion("Hamburgesa")
                 .build();
@@ -31,12 +31,12 @@ class ProductoServiceImplTest {
         List<Producto> productos=new ArrayList<Producto>();
         productos.add(producto);
 
-        when(productoRepository.buscarPorDenominacion("Hamburgesa")).thenReturn(productos);
-        assertEquals(productos, productoService.buscarPorDenominacion("Hamburgesa"));
+        when(productoRepository.searchByDenominacion("Hamburgesa")).thenReturn(productos);
+        assertEquals(productos, productoService.searchByDenominacion("Hamburgesa"));
     }
 
     @Test
-    void testBuscarPorDenominacion() throws Exception{
+    void testSearchByDenominacion() throws Exception{
         Producto producto=Producto.builder()
                 .denominacion("Hamburgesa")
                 .build();
@@ -45,12 +45,12 @@ class ProductoServiceImplTest {
         productos.add(producto);
         Page<Producto> productosPage = new PageImpl<>(productos, PageRequest.of(0, 5), 1);
 
-        when(productoRepository.buscarPorDenominacion("Hamburgesa",PageRequest.of(0, 5))).thenReturn(productosPage);
-        assertEquals(productosPage,productoService.buscarPorDenominacion("Hamburgesa",PageRequest.of(0, 5)));
+        when(productoRepository.searchByDenominacion("Hamburgesa",PageRequest.of(0, 5))).thenReturn(productosPage);
+        assertEquals(productosPage,productoService.searchByDenominacion("Hamburgesa",PageRequest.of(0, 5)));
     }
 
     @Test
-    void buscarDisponibles() throws Exception{
+    void searchDisponibles() throws Exception{
         Producto producto1=Producto.builder()
                 .denominacion("Hamburgesa")
                 .eliminado(false)
@@ -65,8 +65,8 @@ class ProductoServiceImplTest {
         List<Producto> productos=new ArrayList<Producto>();
         productos.add(producto1);
 
-        when(productoRepository.buscarDisponibles()).thenReturn(productos);
-        assertEquals(productos,productoService.buscarDisponibles());
+        when(productoRepository.searchDisponibles()).thenReturn(productos);
+        assertEquals(productos,productoService.searchDisponibles());
 
     }
 }

@@ -62,11 +62,11 @@ public class Pedido extends Base {
     @Builder.Default
     private List<DetallePedido> detallePedidos = new ArrayList<>();
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_domicilio_entrega")
     private Domicilio domicilioEntrega;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 

@@ -43,6 +43,7 @@ public class SecurityConfig {
 
                                 //Autorizacion de acceso a la url
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/**")).permitAll()
+                               // .requestMatchers(new AntPathRequestMatcher("/api/v1/empleados/**")).hasAnyAuthority("ADMINISTRADOR")
                                 /*
                                 .requestMatchers(new AntPathRequestMatcher("/api/v1/usuarios/**")).hasAnyAuthority("ADMINISTRADOR")
 
