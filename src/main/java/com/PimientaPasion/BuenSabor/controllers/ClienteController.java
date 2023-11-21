@@ -93,4 +93,24 @@ public class ClienteController extends BaseControllerImpl<Cliente, ClienteServic
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error no existen pedidos en ese rango\"}");
         }
     }
+
+    @GetMapping("/buscarDomiciliosCliente")
+    public  ResponseEntity<?> buscarDomiciliosCliente(@RequestParam String username)throws Exception {
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.buscarDomiciliosCliente(username));
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error, por favor intente mas tarde\"}");
+        }
+    }
+
+    @GetMapping("/buscarClente")
+    public  ResponseEntity<?> buscarClente(@RequestParam String username)throws Exception {
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.buscarClente(username));
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error, por favor intente mas tarde\"}");
+        }
+    }
 }

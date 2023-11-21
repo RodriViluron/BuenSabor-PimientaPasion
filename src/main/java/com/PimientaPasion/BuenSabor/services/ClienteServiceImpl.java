@@ -2,6 +2,7 @@ package com.PimientaPasion.BuenSabor.services;
 
 import com.PimientaPasion.BuenSabor.DTOs.ClienteRankingDTO;
 import com.PimientaPasion.BuenSabor.entities.Cliente;
+import com.PimientaPasion.BuenSabor.entities.Domicilio;
 import com.PimientaPasion.BuenSabor.repositories.BaseRepository;
 import com.PimientaPasion.BuenSabor.repositories.ClienteRepository;
 import jakarta.transaction.Transactional;
@@ -133,6 +134,30 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente, Long> implement
 
         } catch (Exception e) {
             e.printStackTrace();
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    @Transactional
+    public List<Domicilio> buscarDomiciliosCliente(String username) throws Exception {
+        try{
+            List<Domicilio> domicilios = clienteRepository.buscarDomiciliosCliente(username);
+            return domicilios;
+        }
+        catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    @Transactional
+    public Cliente buscarClente(String username) throws Exception {
+        try{
+            Cliente cliente= clienteRepository.buscarClente(username);
+            return cliente;
+        }
+        catch (Exception e){
             throw new Exception(e.getMessage());
         }
     }

@@ -11,6 +11,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -32,6 +33,9 @@ public class BuenSaborApplication {
     EmpleadoRepository empleadoRepository;
     @Autowired
     ConfiguracionRepository configuracionRepository;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     public static void main(String[] args) {
         SpringApplication.run(BuenSaborApplication.class, args);
@@ -75,7 +79,7 @@ public class BuenSaborApplication {
             Usuario usuario1 = Usuario.builder()
                     //.auth0Id("1")
                     .username("user1")
-                    .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
+                    .password(passwordEncoder.encode("1234"))
                     .rol(Rol.CLIENTE)
                     .build();
 
@@ -83,42 +87,42 @@ public class BuenSaborApplication {
             Usuario usuario2 = Usuario.builder()
                     //.auth0Id("2")
                     .username("user2")
-                    .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
+                    .password(passwordEncoder.encode("1234"))
                     .rol(Rol.CLIENTE)
                     .build();
 
             Usuario usuario3 = Usuario.builder()
                     //.auth0Id("3")
                     .username("admin")
-                    .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
+                    .password(passwordEncoder.encode("1234"))
                     .rol(Rol.ADMINISTRADOR)
                     .build();
 
             Usuario usuario4 = Usuario.builder()
                     //.auth0Id("4")
                     .username("cajero")
-                    .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
+                    .password(passwordEncoder.encode("1234"))
                     .rol(Rol.CAJERO)
                     .build();
 
             Usuario usuario5 = Usuario.builder()
                     //.auth0Id("5")
                     .username("cocinero1")
-                    .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
+                    .password(passwordEncoder.encode("1234"))
                     .rol(Rol.COCINERO)
                     .build();
 
             Usuario usuario6 = Usuario.builder()
                     //.auth0Id("6")
                     .username("delivery")
-                    .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
+                    .password(passwordEncoder.encode("1234"))
                     .rol(Rol.DELIVERY)
                     .build();
 
             Usuario usuario7 = Usuario.builder()
                     //.auth0Id("7")
                     .username("cocinero2")
-                    .password("$2a$10$fcQbrK9cNIjQPEFkKxwZLOOGc3q.3OaZttY6JCenHlSY/0x58sH3i")
+                    .password(passwordEncoder.encode("1234"))
                     .rol(Rol.COCINERO)
                     .build();
 
@@ -424,7 +428,7 @@ public class BuenSaborApplication {
                     .tiempoEstimadoCocina(20)
                     .precioVenta(4000.00)
                     .precioCosto(1500.00)
-                    .urlImagen("urlImagenHamburguesaClásica")
+                    .urlImagen("images/Hamburguesa1.jpg")
                     .receta("Cocinar carne 10min, agregar 2 hojas de lechuga, agregar 3 fetas de tomate, 1 feta de queso")
                     .eliminado(false)
                     .build();
@@ -435,7 +439,7 @@ public class BuenSaborApplication {
                     .tiempoEstimadoCocina(25)
                     .precioVenta(4500.00)
                     .precioCosto(2000.00)
-                    .urlImagen("urlImagenLomoClásico")
+                    .urlImagen("images/lomoClasico.jpg")
                     .receta("Cocinar carne 10min, agregar 2 hojas de lechuga, 3 fetas de tomate, 1 feta de queso, 2 cebollas")
                     .eliminado(false)
                     .build();
@@ -446,7 +450,7 @@ public class BuenSaborApplication {
                     .tiempoEstimadoCocina(0)
                     .precioVenta(1600.00)
                     .precioCosto(800.00)
-                    .urlImagen("urlCocaCola1.5L")
+                    .urlImagen("images/cocaCola1.25.jpg")
                     .eliminado(false)
                     .build();
 
@@ -456,7 +460,7 @@ public class BuenSaborApplication {
                     .tiempoEstimadoCocina(0)
                     .precioVenta(900.00)
                     .precioCosto(400.00)
-                    .urlImagen("urlAguaMineral0.6L")
+                    .urlImagen("images/aguamineral.jpg")
                     .eliminado(false)
                     .build();
 

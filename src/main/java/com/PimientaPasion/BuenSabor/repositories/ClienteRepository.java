@@ -1,6 +1,7 @@
 package com.PimientaPasion.BuenSabor.repositories;
 
 import com.PimientaPasion.BuenSabor.entities.Cliente;
+import com.PimientaPasion.BuenSabor.entities.Domicilio;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Modifying;
@@ -82,6 +83,12 @@ public interface ClienteRepository extends BaseRepository<Cliente, Long> {
             @Param("nuevoTelefono") String nuevoTelefono,
             @Param("nuevoEmail") String nuevoEmail
     );
+
+    @Query(value = "select c.domicilios from Cliente  c where c.usuario.username = :username")
+    List<Domicilio> buscarDomiciliosCliente (@Param("username")String username);
+
+    @Query(value = "select c from Cliente  c where c.usuario.username = :username")
+    Cliente buscarClente (@Param("username")String username);
 
 
 }
