@@ -27,6 +27,6 @@ public interface ClienteService extends BaseService<Cliente,Long>{
 
     Cliente buscarCliente(String username) throws Exception;
 
-
+    Cliente agregarDomicilioCliente(String username,Domicilio domicilioRequest) throws Exception;
 
 }
