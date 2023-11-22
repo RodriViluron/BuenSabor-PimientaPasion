@@ -19,9 +19,9 @@ public class RubroProductoServiceImpl extends BaseServiceImpl<RubroProducto,Long
     }
 
     @Override
-    public List<RubroProducto> buscarRubrosProdDisponibles() throws Exception {
+    public List<RubroProducto> searchRubrosProdDisponibles() throws Exception {
         try {
-            List<RubroProducto> rubroProductos=rubroProductoRepository.buscarRubrosProdDisponibles();
+            List<RubroProducto> rubroProductos=rubroProductoRepository.searchRubrosProdDisponibles();
             return rubroProductos;
         }
         catch (Exception e){

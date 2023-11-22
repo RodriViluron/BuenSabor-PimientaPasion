@@ -88,7 +88,7 @@ public interface ClienteRepository extends BaseRepository<Cliente, Long> {
     List<Domicilio> buscarDomiciliosCliente (@Param("username")String username);
 
     @Query(value = "select c from Cliente  c where c.usuario.username = :username")
-    Cliente buscarClente (@Param("username")String username);
+    Cliente buscarCliente (@Param("username")String username);
 
 
 }

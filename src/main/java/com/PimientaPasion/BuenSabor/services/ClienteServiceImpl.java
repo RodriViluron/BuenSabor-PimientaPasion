@@ -152,9 +152,9 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente, Long> implement
 
     @Override
     @Transactional
-    public Cliente buscarClente(String username) throws Exception {
+    public Cliente buscarCliente(String username) throws Exception {
         try{
-            Cliente cliente= clienteRepository.buscarClente(username);
+            Cliente cliente= clienteRepository.buscarCliente(username);
             return cliente;
         }
         catch (Exception e){

@@ -418,6 +418,10 @@ public class BuenSaborApplication {
                     .denominacion("Bebidas")
                     .build();
 
+            RubroProducto rubroProducto4 = RubroProducto.builder()
+                    .denominacion("Bebida con gas")
+                    .rubroPadre(rubroProducto3)
+                    .build();
 
 
 
@@ -559,6 +563,7 @@ public class BuenSaborApplication {
             rubroProductoRepository.save(rubroProducto1);
             rubroProductoRepository.save(rubroProducto2);
             rubroProductoRepository.save(rubroProducto3);
+            rubroProductoRepository.save(rubroProducto4);
 
             // Crear Pedido
             Pedido pedido1 = Pedido.builder()

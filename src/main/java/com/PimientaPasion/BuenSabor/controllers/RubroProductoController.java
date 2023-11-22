@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "api/v1/rubroProductos")
 public class RubroProductoController extends  BaseControllerImpl<RubroProducto, RubroProductoServiceImpl> {
 
-    @GetMapping("buscarRubrosProdDisponibles")
-    public ResponseEntity<?> buscarRubrosProdDisponibles (){
+    @GetMapping("searchRubrosProdDisponibles")
+    public ResponseEntity<?> searchRubrosProdDisponibles (){
         try{
-            return ResponseEntity.status(HttpStatus.OK).body(servicio.buscarRubrosProdDisponibles());
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchRubrosProdDisponibles());
         }
         catch (Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));

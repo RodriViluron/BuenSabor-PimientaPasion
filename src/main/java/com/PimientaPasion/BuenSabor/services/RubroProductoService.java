@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface RubroProductoService extends BaseService<RubroProducto,Long> {
 
-    List<RubroProducto> buscarRubrosProdDisponibles() throws Exception;
+    List<RubroProducto> searchRubrosProdDisponibles() throws Exception;
 }

@@ -25,7 +25,7 @@ public interface ClienteService extends BaseService<Cliente,Long>{
 
     List<Domicilio> buscarDomiciliosCliente (String username)throws Exception;
 
-    Cliente buscarClente(String username) throws Exception;
+    Cliente buscarCliente(String username) throws Exception;
 
 
 

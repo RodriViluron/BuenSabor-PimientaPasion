@@ -16,7 +16,7 @@ public interface RubroProductoRepository extends BaseRepository<RubroProducto, L
 
     //HU #09 Query para presentar productos en el menu
     @Query("select rp from RubroProducto  rp where rp.eliminado=false OR rp.eliminado=null")
-    List<RubroProducto> buscarRubrosProdDisponibles();
+    List<RubroProducto> searchRubrosProdDisponibles();
 
 /*
     //query para buscar por rubroProducto (categorias)
