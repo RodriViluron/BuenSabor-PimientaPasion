@@ -264,7 +264,7 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenTomate")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
@@ -273,7 +273,7 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenlechuga")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
@@ -282,7 +282,7 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenCebolla")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
@@ -291,7 +291,7 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenCarne")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
@@ -300,7 +300,7 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenLomo")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
@@ -309,7 +309,7 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenPanHamburgesaClasico")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
@@ -318,7 +318,7 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenQueso")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
@@ -327,7 +327,7 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenJamon")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
@@ -336,25 +336,25 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenPanLomoClasico")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
             Ingrediente ingrediente10 = Ingrediente.builder()
-                    .denominacion("CocaCola 1.5L")
+                    .denominacion("panceta")
                     .stockActual(50.20)
                     .stockMinimo(15.0)
                     .precioCompra(100)
-                    .urlImagen("urlImagenCocaCola1.5L")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
             Ingrediente ingrediente11 = Ingrediente.builder()
-                    .denominacion("Agua Mineral 0.6L")
+                    .denominacion("pan negro")
                     .stockActual(50.20)
                     .stockMinimo(15.0)
                     .precioCompra(100)
-                    .urlImagen("urlImagenAguaMineral0.6L")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
