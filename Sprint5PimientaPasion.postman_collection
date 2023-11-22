@@ -59,7 +59,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/clientes/2",
+							"raw": "http://localhost:8080/api/v1/clientes/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -69,7 +69,7 @@
 								"api",
 								"v1",
 								"clientes",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -171,7 +171,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/clientes/searchPaged?filtro=o&page=0&size=5",
+							"raw": "http://localhost:8080/api/v1/articuloManufacturado/searchByNombre?filtro=Hambur&pageable=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -180,21 +180,17 @@
 							"path": [
 								"api",
 								"v1",
-								"clientes",
-								"searchPaged"
+								"articuloManufacturado",
+								"searchByNombre"
 							],
 							"query": [
 								{
 									"key": "filtro",
-									"value": "o"
+									"value": "Hambur"
 								},
 								{
-									"key": "page",
-									"value": "0"
-								},
-								{
-									"key": "size",
-									"value": "5"
+									"key": "pageable",
+									"value": "1"
 								}
 							]
 						}
@@ -685,6 +681,16 @@
 				{
 					"name": "update",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwMDUzNDkwNiwiZXhwIjoxNzAwNTM2MzQ2fQ.AdNmouOAq2wVZfjpjBDnyi8QzZreRKSteJpcC1clQLg",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -907,6 +913,16 @@
 				{
 					"name": "modificarEmpleado",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwMDA2OTMyMywiZXhwIjoxNzAwMDcwNzYzfQ.LkodaKDb6r1kMuXkjm5ffEnKN507ft-1Wnl7O9w_ES0",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -1039,6 +1055,16 @@
 				{
 					"name": "create",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwMDUzNDkwNiwiZXhwIjoxNzAwNTM2MzQ2fQ.AdNmouOAq2wVZfjpjBDnyi8QzZreRKSteJpcC1clQLg",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -1447,6 +1473,220 @@
 			]
 		},
 		{
+			"name": "Rubro Ingrediente",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubroIngredientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubroIngredientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubroIngredientes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubroIngredientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubroIngredientes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubroIngredientes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"id\": 2,\r\n    \"eliminado\": true\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubroIngredientes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubroIngredientes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"denominacion\": \"Cebolla\",\r\n        \"fechaHoraAlta\": \"\",\r\n        \"fechaHoraBaja\": \"\",\r\n        \"fechaHoraModificacion\": \"\",\r\n        \"precioCompra\": 1300.00,\r\n        \"stockActual\": 90,\r\n        \"stockMinimo\": 75.00,\r\n        \"urlImagen\": \"\"\r\n        \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubroIngredientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubroIngredientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubroIngredientes/search?filtro=a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubroIngredientes",
+								"search"
+							],
+							"query": [
+								{
+									"key": "filtro",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search Page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarRubrosIngDisponibles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwMDY3Mjk4OSwiZXhwIjoxNzAwNjc0NDI5fQ.YI4ljD0T_cc4AvPKXmAqYjUYnxTSukklecZdnl1wr-Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/rubroIngredientes/searchRubrosIngDisponibles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"rubroIngredientes",
+								"searchRubrosIngDisponibles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Rubro Producto",
 			"item": [
 				{
@@ -1612,10 +1852,20 @@
 				{
 					"name": "buscarRubrosProdDisponibles",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwMDY3Mjk4OSwiZXhwIjoxNzAwNjc0NDI5fQ.YI4ljD0T_cc4AvPKXmAqYjUYnxTSukklecZdnl1wr-Q",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/rubroProductos/buscarRubrosProdDisponibles",
+							"raw": "http://localhost:8080/api/v1/rubroProductos/searchRubrosProdDisponibles",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1625,7 +1875,7 @@
 								"api",
 								"v1",
 								"rubroProductos",
-								"buscarRubrosProdDisponibles"
+								"searchRubrosProdDisponibles"
 							]
 						}
 					},
@@ -1764,12 +2014,22 @@
 					"response": []
 				},
 				{
-					"name": "search",
+					"name": "searchByDenominacion",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwMDUyNzI2OCwiZXhwIjoxNzAwNTI4NzA4fQ.SspHxsCbf9EwhCV4Q9A-iFzf98da70X8B6JRuUHhAxk",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/productos/buscarPorDenominacion?denominacion=b",
+							"raw": "http://localhost:8080/api/v1/productos/searchByDenominacion?filtro=a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1779,12 +2039,12 @@
 								"api",
 								"v1",
 								"productos",
-								"buscarPorDenominacion"
+								"searchByDenominacion"
 							],
 							"query": [
 								{
-									"key": "denominacion",
-									"value": "b"
+									"key": "filtro",
+									"value": "a"
 								}
 							]
 						}
@@ -1792,12 +2052,22 @@
 					"response": []
 				},
 				{
-					"name": "search Page",
+					"name": "searchByDenominacionPage",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwMDUyNzY0MCwiZXhwIjoxNzAwNTI5MDgwfQ.gxor112XyltSfx8OAilDtX4LTdz-9_e4wA8ZhHHWiB4",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/productos/buscarPorDenominacionPage?denominacion=l&page=0&size=5",
+							"raw": "http://localhost:8080/api/v1/productos/searchByDenominacionPage?filtro=a&page=0&size=5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1807,12 +2077,12 @@
 								"api",
 								"v1",
 								"productos",
-								"buscarPorDenominacionPage"
+								"searchByDenominacionPage"
 							],
 							"query": [
 								{
-									"key": "denominacion",
-									"value": "l"
+									"key": "filtro",
+									"value": "a"
 								},
 								{
 									"key": "page",
@@ -1828,48 +2098,12 @@
 					"response": []
 				},
 				{
-					"name": "Get all page",
+					"name": "searchDisponibles",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/articuloManufacturados/paged?page=0&size=2&sort=id,asc",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"v1",
-								"articuloManufacturados",
-								"paged"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "0"
-								},
-								{
-									"key": "size",
-									"value": "2"
-								},
-								{
-									"key": "sort",
-									"value": "id,asc"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "buscarDisponibles",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/api/v1/productos/buscarDisponibles",
+							"raw": "http://localhost:8080/api/v1/productos/searchDisponibles",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1879,13 +2113,63 @@
 								"api",
 								"v1",
 								"productos",
-								"buscarDisponibles"
+								"searchDisponibles"
 							],
 							"query": [
 								{
 									"key": "",
 									"value": "",
 									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchByPrecioVentaRange",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcwMDUyNzY0MCwiZXhwIjoxNzAwNTI5MDgwfQ.gxor112XyltSfx8OAilDtX4LTdz-9_e4wA8ZhHHWiB4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/productos/searchByPrecioVentaRange?precioMinimo=0&precioMaximo=100000&page=0&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"productos",
+								"searchByPrecioVentaRange"
+							],
+							"query": [
+								{
+									"key": "precioMinimo",
+									"value": "0"
+								},
+								{
+									"key": "precioMaximo",
+									"value": "100000"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
 								}
 							]
 						}

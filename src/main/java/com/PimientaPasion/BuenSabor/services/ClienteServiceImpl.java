@@ -166,7 +166,7 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente, Long> implement
     @Transactional
     public Cliente agregarDomicilioCliente(String username, Domicilio domicilioRequest) throws Exception {
         try{
-            Cliente cliente= clienteRepository.buscarClente(username);
+            Cliente cliente= clienteRepository.buscarCliente(username);
             cliente.getDomicilios().add(domicilioRequest);
             Cliente clienteActualizado =clienteRepository.save(cliente) ;
             return clienteActualizado;
