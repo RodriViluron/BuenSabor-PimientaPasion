@@ -264,7 +264,7 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenTomate")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
@@ -273,7 +273,7 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenlechuga")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
@@ -282,7 +282,7 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenCebolla")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
@@ -291,7 +291,7 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenCarne")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
@@ -300,7 +300,7 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenLomo")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
@@ -309,7 +309,7 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenPanHamburgesaClasico")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
@@ -318,7 +318,7 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenQueso")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
@@ -327,7 +327,7 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenJamon")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
@@ -336,25 +336,25 @@ public class BuenSaborApplication {
                     .stockActual(50.20)
                     .stockMinimo(10.0)
                     .precioCompra(5)
-                    .urlImagen("urlImagenPanLomoClasico")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
             Ingrediente ingrediente10 = Ingrediente.builder()
-                    .denominacion("CocaCola 1.5L")
+                    .denominacion("panceta")
                     .stockActual(50.20)
                     .stockMinimo(15.0)
                     .precioCompra(100)
-                    .urlImagen("urlImagenCocaCola1.5L")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
             Ingrediente ingrediente11 = Ingrediente.builder()
-                    .denominacion("Agua Mineral 0.6L")
+                    .denominacion("pan negro")
                     .stockActual(50.20)
                     .stockMinimo(15.0)
                     .precioCompra(100)
-                    .urlImagen("urlImagenAguaMineral0.6L")
+                    .urlImagen("images/verduras.jpg")
                     .eliminado(false)
                     .build();
 
@@ -426,19 +426,44 @@ public class BuenSaborApplication {
 
 
             // Crear Productos
+
+            //Hamburguesas
             Producto producto1 = Producto.builder()
-                    .denominacion("Hamburguesa_clásica")
+                    .denominacion("Hamburguesa Clásica")
                     .descripcion("Carne, pan, lechuga, tomate, queso.")
                     .tiempoEstimadoCocina(20)
                     .precioVenta(4000.00)
                     .precioCosto(1500.00)
-                    .urlImagen("images/Hamburguesa1.jpg")
+                    .urlImagen("images/hamburguesa1.jpg")
                     .receta("Cocinar carne 10min, agregar 2 hojas de lechuga, agregar 3 fetas de tomate, 1 feta de queso")
                     .eliminado(false)
                     .build();
 
             Producto producto2 = Producto.builder()
-                    .denominacion("Lomo_clásico")
+                    .denominacion("hamburguesa Bacon")
+                    .descripcion("Carne, pan, cheddar, bacon, cebolla.")
+                    .tiempoEstimadoCocina(20)
+                    .precioVenta(4500.00)
+                    .precioCosto(1800.00)
+                    .urlImagen("images/hamburguesa2.jpg")
+                    .receta("Mezcla carne molida con sal y pimienta. Forma la carne en hamburguesas y ásalas. Tuesta el pan y añade cheddar, bacon y cebolla asada. Arma la hamburguesa y ¡disfruta!")
+                    .eliminado(false)
+                    .build();
+
+            Producto producto3 = Producto.builder()
+                    .denominacion("Hamburguesa Guacamole")
+                    .descripcion("Carne, pan, bacon, lechuga, queso, cebolla, guacamole.")
+                    .tiempoEstimadoCocina(25)
+                    .precioVenta(4700.00)
+                    .precioCosto(2000.00)
+                    .urlImagen("images/hamburguesa3.jpg")
+                    .receta("Condimenta la carne, cocina, agrega bacon y queso. Arma con lechuga, cebolla, y guacamole. ¡Listo para disfrutar!")
+                    .eliminado(false)
+                    .build();
+
+            //Lomos
+            Producto producto4 = Producto.builder()
+                    .denominacion("Lomo Clásico")
                     .descripcion("Cocinado a la parrilla y sazonado al gusto, con lechuga, tomate y cebolla.")
                     .tiempoEstimadoCocina(25)
                     .precioVenta(4500.00)
@@ -448,7 +473,31 @@ public class BuenSaborApplication {
                     .eliminado(false)
                     .build();
 
-            Producto producto3 = Producto.builder()
+            Producto producto5 = Producto.builder()
+                    .denominacion("Lomo de Pollo")
+                    .descripcion("Cocinado a la parrilla y sazonado al gusto, con lechuga, tomate y queso.")
+                    .tiempoEstimadoCocina(25)
+                    .precioVenta(4200.00)
+                    .precioCosto(1700.00)
+                    .urlImagen("images/lomo2.jpg")
+                    .receta("Asa el pollo sazonado a la parrilla. Añade queso, arma con lechuga y tomate. ¡Delicioso y listo para servir!")
+                    .eliminado(false)
+                    .build();
+
+            Producto producto6 = Producto.builder()
+                    .denominacion("Lomo Desmenuzado")
+                    .descripcion("Cocinado a la parrilla y sazonado al gusto, con lechuga, tomate,cebolla, queso y pepino.")
+                    .tiempoEstimadoCocina(30)
+                    .precioVenta(5000.00)
+                    .precioCosto(2300.00)
+                    .urlImagen("images/lomo3.jpg")
+                    .receta("Asa el lomo sazonado, luego desmenuzalo. Agrega queso derretido. Prepara con lechuga, tomate, cebolla y pepino. ¡Listo para disfrutar en tu plato!")
+                    .eliminado(false)
+                    .build();
+
+            //Bebidas
+
+            Producto producto7 = Producto.builder()
                     .denominacion("CocaCola 1.5L")
                     .descripcion("coca cola sabor original de 1.5 litros, descartable")
                     .tiempoEstimadoCocina(0)
@@ -458,7 +507,7 @@ public class BuenSaborApplication {
                     .eliminado(false)
                     .build();
 
-            Producto producto4 = Producto.builder()
+            Producto producto8 = Producto.builder()
                     .denominacion("Agua Mineral 0.6L")
                     .descripcion("agua mineral descartable de 600 ml")
                     .tiempoEstimadoCocina(0)
@@ -468,12 +517,28 @@ public class BuenSaborApplication {
                     .eliminado(false)
                     .build();
 
+            Producto producto9 = Producto.builder()
+                    .denominacion("Agua Saborizada Manzana 0.6L")
+                    .descripcion("agua saborizada manzana descartable de 600 ml")
+                    .tiempoEstimadoCocina(0)
+                    .precioVenta(1000.00)
+                    .precioCosto(500.00)
+                    .urlImagen("images/aguasaborizada.jpg")
+                    .eliminado(false)
+                    .build();
+
             // Asignar Producto a rubro de Productos
             rubroProducto1.agregarProducto(producto1);
-            rubroProducto2.agregarProducto(producto2);
-            rubroProducto3.agregarProducto(producto3);
-            rubroProducto3.agregarProducto(producto4);
+            rubroProducto1.agregarProducto(producto2);
+            rubroProducto1.agregarProducto(producto3);
 
+            rubroProducto2.agregarProducto(producto4);
+            rubroProducto2.agregarProducto(producto5);
+            rubroProducto2.agregarProducto(producto6);
+
+            rubroProducto3.agregarProducto(producto7);
+            rubroProducto3.agregarProducto(producto8);
+            rubroProducto3.agregarProducto(producto9);
 
             // Crear DetalleProducto
             //Producto 1
@@ -502,7 +567,7 @@ public class BuenSaborApplication {
                     .ingrediente(ingrediente6)
                     .build();
 
-            //Producto 2
+            //Producto 4
             DetalleProducto detalleProducto21 = DetalleProducto.builder()
                     .cantidad(30)
                     .ingrediente(ingrediente1)
@@ -528,13 +593,13 @@ public class BuenSaborApplication {
                     .ingrediente(ingrediente9)
                     .build();
 
-            //Producto 3
+            //Producto 7
             DetalleProducto detalleProducto31 = DetalleProducto.builder()
                     .cantidad(1)
                     .ingrediente(ingrediente10)
                     .build();
 
-            //Producto
+            //Producto 8
             DetalleProducto detalleProducto41 = DetalleProducto.builder()
                     .cantidad(1)
                     .ingrediente(ingrediente11)
@@ -549,15 +614,15 @@ public class BuenSaborApplication {
             producto1.agregarDetalleProducto(detalleProducto14);
             producto1.agregarDetalleProducto(detalleProducto15);
 
-            producto2.agregarDetalleProducto(detalleProducto21);
-            producto2.agregarDetalleProducto(detalleProducto22);
-            producto2.agregarDetalleProducto(detalleProducto23);
-            producto2.agregarDetalleProducto(detalleProducto24);
-            producto2.agregarDetalleProducto(detalleProducto25);
+            producto4.agregarDetalleProducto(detalleProducto21);
+            producto4.agregarDetalleProducto(detalleProducto22);
+            producto4.agregarDetalleProducto(detalleProducto23);
+            producto4.agregarDetalleProducto(detalleProducto24);
+            producto4.agregarDetalleProducto(detalleProducto25);
 
-            producto3.agregarDetalleProducto((detalleProducto31));
+            producto7.agregarDetalleProducto((detalleProducto31));
 
-            producto4.agregarDetalleProducto((detalleProducto41));
+            producto8.agregarDetalleProducto((detalleProducto41));
 
             // Guardar rubro producto con los productos y detalles producto
             rubroProductoRepository.save(rubroProducto1);
