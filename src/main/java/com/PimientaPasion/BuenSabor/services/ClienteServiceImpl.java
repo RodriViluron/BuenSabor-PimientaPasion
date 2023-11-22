@@ -162,6 +162,18 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente, Long> implement
         }
     }
 
-
+    @Override
+    @Transactional
+    public Cliente agregarDomicilioCliente(String username, Domicilio domicilioRequest) throws Exception {
+        try{
+            Cliente cliente= clienteRepository.buscarClente(username);
+            cliente.getDomicilios().add(domicilioRequest);
+            Cliente clienteActualizado =clienteRepository.save(cliente) ;
+            return clienteActualizado;
+        }
+        catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
 
 }

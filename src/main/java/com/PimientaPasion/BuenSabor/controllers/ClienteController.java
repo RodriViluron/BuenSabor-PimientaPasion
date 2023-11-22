@@ -3,6 +3,7 @@ package com.PimientaPasion.BuenSabor.controllers;
 
 import com.PimientaPasion.BuenSabor.DTOs.ClienteRankingDTO;
 import com.PimientaPasion.BuenSabor.entities.Cliente;
+import com.PimientaPasion.BuenSabor.entities.Domicilio;
 import com.PimientaPasion.BuenSabor.services.ClienteServiceImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -108,6 +109,16 @@ public class ClienteController extends BaseControllerImpl<Cliente, ClienteServic
     public  ResponseEntity<?> buscarClente(@RequestParam String username)throws Exception {
         try{
             return ResponseEntity.status(HttpStatus.OK).body(servicio.buscarClente(username));
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error, por favor intente mas tarde\"}");
+        }
+    }
+
+    @PutMapping("/agregarDomicilioCliente")
+    public ResponseEntity<?> agregarDomicilioCliente(@RequestParam String username, @RequestBody Domicilio domicilioRequest) throws  Exception{
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.agregarDomicilioCliente(username,domicilioRequest));
         }
         catch (Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error, por favor intente mas tarde\"}");

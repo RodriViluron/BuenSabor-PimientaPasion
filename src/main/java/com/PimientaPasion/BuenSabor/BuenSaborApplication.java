@@ -168,9 +168,17 @@ public class BuenSaborApplication {
                     .localidad("Las Heras")
                     .build();
 
+            Domicilio domicilio4 = Domicilio.builder()
+                    .calle("Calle España ")
+                    .numeroDomicilio(1123)
+                    .codigoPostal(5312)
+                    .localidad("Las Heras")
+                    .build();
+
             // Asignar Domicilio a ClientePedidosDeliveyDTO
             cliente1.agregarDomicilio(domicilio1);
             cliente1.agregarDomicilio(domicilio3);
+            cliente1.agregarDomicilio(domicilio4);
             cliente2.agregarDomicilio(domicilio2);
 
 
